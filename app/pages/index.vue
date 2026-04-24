@@ -1,7 +1,7 @@
 <template>
   <main>
-    <!-- Auto-imported from app/components/home/HeroSection.vue → <HomeHeroSection /> -->
     <HomeHeroSection />
+    <HomeAboutSection />
   </main>
 </template>
 
