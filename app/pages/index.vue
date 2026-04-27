@@ -3,6 +3,7 @@
     <HomeHeroSection />
     <HomeAboutSection />
     <HomeProcessSection />
+    <HomeTestimonialsSection />
   </main>
 </template>
 
