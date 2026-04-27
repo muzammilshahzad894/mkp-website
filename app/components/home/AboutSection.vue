@@ -4,7 +4,7 @@
     aria-labelledby="about-heading"
   >
     <div
-      class="mx-auto w-full max-w-[min(100%,75vw,1280px)] px-5 py-14 sm:px-6 sm:py-16 md:px-8 lg:py-20"
+      class="mx-auto w-full max-w-[min(100%,85vw,1400px)] px-5 py-14 sm:px-6 sm:py-16 md:px-8 lg:py-20"
     >
       <h2
         id="about-heading"

@@ -2,6 +2,7 @@
   <main>
     <HomeHeroSection />
     <HomeAboutSection />
+    <HomeProcessSection />
   </main>
 </template>
 
