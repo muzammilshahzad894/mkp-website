@@ -66,9 +66,15 @@
         >
         <NuxtLink
           to="/contact"
-          class="font-medium text-white/75 transition hover:text-white"
-          >Contact</NuxtLink
+          class="relative pb-1 font-medium transition hover:text-white"
+          :class="isContact ? 'text-white' : 'text-white/75'"
         >
+          Contact
+          <span
+            v-if="isContact"
+            class="absolute bottom-0 left-0 right-0 mx-auto h-px w-8 bg-white"
+          />
+        </NuxtLink>
       </nav>
 
       <div class="shrink-0">
@@ -85,4 +91,5 @@
 const route = useRoute()
 
 const isHome = computed(() => route.path === '/')
+const isContact = computed(() => route.path === '/contact')
 </script>
