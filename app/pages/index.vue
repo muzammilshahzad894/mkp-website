@@ -4,6 +4,7 @@
     <HomeAboutSection />
     <HomeProcessSection />
     <HomeTestimonialsSection />
+    <HomeFaqSection />
   </main>
 </template>
 
