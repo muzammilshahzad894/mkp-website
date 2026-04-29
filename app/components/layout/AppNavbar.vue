@@ -82,9 +82,10 @@
               <div class="flex items-stretch">
                 <!-- Left col -->
                 <div class="flex flex-col py-5" style="min-width: 190px;">
-                  <button
+                  <NuxtLink
                     v-for="cat in categories"
                     :key="cat.key"
+                    :to="cat.to"
                     class="flex w-full items-center justify-between px-6 py-[9px] text-left"
                     @mouseenter="activeCategory = cat.key"
                   >
@@ -101,7 +102,7 @@
                       :class="activeCategory === cat.key ? 'text-neutral-600' : 'text-neutral-300'"
                       aria-hidden="true"
                     >{{ activeCategory === cat.key ? '↗' : '→' }}</span>
-                  </button>
+                  </NuxtLink>
                 </div>
 
                 <!-- Divider: only spans content, not full box height -->
@@ -160,36 +161,36 @@ const route = useRoute()
 const isHome        = computed(() => route.path === '/')
 const isContact     = computed(() => route.path === '/contact')
 const isServicesNav = computed(
-  () => route.path === '/services' || route.path.startsWith('/services/')
+  () => route.path === '/services_extensions' || route.path.startsWith('/services_extensions/')
 )
 
 const activeCategory = ref('extensions')
 
 const categories = [
-  { key: 'extensions',  label: 'Extensions'  },
-  { key: 'conversions', label: 'Conversions' },
-  { key: 'new-builds',  label: 'New Builds'  },
-  { key: 'other',       label: 'Other'       },
+  { key: 'extensions',  label: 'Extensions',  to: '/services_extensions' },
+  { key: 'conversions', label: 'Conversions', to: '#' },
+  { key: 'new-builds',  label: 'New Builds',  to: '#' },
+  { key: 'other',       label: 'Other',       to: '#' },
 ]
 
 const subLinks = {
   extensions: [
-    { label: 'Rear & Side Extensions',   to: '/services#our-services' },
-    { label: 'Single-Storey Extensions', to: '/services#our-services' },
-    { label: 'Double-Storey Extensions', to: '/services#our-services' },
+    { label: 'Rear & Side Extensions',   to: '/services_extensions' },
+    { label: 'Single-Storey Extensions', to: '/services_extensions' },
+    { label: 'Double-Storey Extensions', to: '/services_extensions' },
   ],
   conversions: [
-    { label: 'Loft Conversions',         to: '/services' },
-    { label: 'Garage Conversions',       to: '/services' },
-    { label: 'Basement Conversions',     to: '/services' },
+    { label: 'Loft Conversions',         to: '#' },
+    { label: 'Garage Conversions',       to: '#' },
+    { label: 'Basement Conversions',     to: '#' },
   ],
   'new-builds': [
-    { label: 'Residential New Builds',   to: '/services' },
-    { label: 'Custom Home Design',       to: '/services' },
+    { label: 'Residential New Builds',   to: '#' },
+    { label: 'Custom Home Design',       to: '#' },
   ],
   other: [
-    { label: 'Planning & Compliance',    to: '/services' },
-    { label: 'Interior Design',          to: '/services' },
+    { label: 'Planning & Compliance',    to: '#' },
+    { label: 'Interior Design',          to: '#' },
   ],
 }
 
