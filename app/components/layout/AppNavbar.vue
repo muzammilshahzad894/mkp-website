@@ -125,7 +125,11 @@
           </div>
         </div>
 
-        <NuxtLink to="/projects" class="font-medium text-white/75 transition hover:text-white">
+        <NuxtLink
+          to="/projects"
+          class="nav-item relative px-1.5 py-0.5 font-medium transition hover:text-white"
+          :class="isProjects ? 'text-white active-brackets' : 'text-white/75'"
+        >
           Projects
         </NuxtLink>
         <NuxtLink to="/blog" class="font-medium text-white/75 transition hover:text-white">
@@ -159,6 +163,7 @@
 const route = useRoute()
 
 const isHome        = computed(() => route.path === '/')
+const isProjects    = computed(() => route.path === '/projects' || route.path.startsWith('/projects/'))
 const isContact     = computed(() => route.path === '/contact')
 const isServicesNav = computed(
   () => route.path === '/services_extensions' || route.path.startsWith('/services_extensions/')

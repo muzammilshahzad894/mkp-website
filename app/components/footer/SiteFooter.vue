@@ -154,7 +154,7 @@ const year = new Date().getFullYear()
 const quickLinks = [
   { label: 'Home', to: '/' },
   { label: 'About Us', to: '/about' },
-  { label: 'Portfolio', to: '/portfolio' },
+  { label: 'Portfolio', to: '/projects' },
   { label: 'Our Process', to: '/#process-heading' },
   { label: 'Testimonials', to: '/#testimonials-heading' },
   { label: 'Locations', to: '/locations' }
