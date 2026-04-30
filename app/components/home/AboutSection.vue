@@ -64,27 +64,28 @@
         </div>
       </div>
 
-      <div class="mt-12 sm:mt-14 lg:mt-16">
+      <div class="mt-12 overflow-hidden sm:mt-14 lg:mt-16">
         <p class="sr-only">
           Local authorities and boroughs we work with
         </p>
-        <ul
-          class="flex flex-wrap items-center justify-center gap-x-5 gap-y-8 sm:gap-x-7 lg:justify-between lg:gap-x-3"
-        >
-          <li
-            v-for="p in partners"
-            :key="p.src"
-            class="flex shrink-0 items-center justify-center"
-          >
-            <img
-              :src="p.src"
-              :alt="p.alt"
-              class="h-9 w-auto max-w-[min(160px,34vw)] object-contain sm:h-10 sm:max-w-[min(184px,24vw)] lg:h-11"
-              loading="lazy"
-              decoding="async"
-            />
-          </li>
-        </ul>
+
+        <div class="partner-slider">
+          <ul class="partner-track">
+            <li
+              v-for="(p, index) in [...partners, ...partners]"
+              :key="index"
+              class="flex shrink-0 items-center justify-center px-8"
+            >
+              <img
+                :src="p.src"
+                :alt="p.alt"
+                class="h-12 w-auto max-w-[220px] object-contain sm:h-12 lg:h-14"
+                loading="lazy"
+                decoding="async"
+              />
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -118,3 +119,25 @@ const partners = [
   }
 ]
 </script>
+
+<style scoped>
+.partner-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.partner-track {
+  display: flex;
+  width: max-content;
+  animation: scrollPartners 28s linear infinite;
+}
+
+@keyframes scrollPartners {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+</style>

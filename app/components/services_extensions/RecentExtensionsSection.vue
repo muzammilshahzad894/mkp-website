@@ -33,8 +33,7 @@
 
       <!-- 3×2 Photo grid -->
       <div
-        class="mt-10 grid grid-cols-1 gap-2.5 sm:grid-cols-2 sm:mt-12 lg:grid-cols-3"
-        style="row-gap: 10px; column-gap: 10px"
+        class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:mt-12 lg:grid-cols-3"
       >
         <div
           v-for="i in 6"

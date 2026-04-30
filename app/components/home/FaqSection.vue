@@ -53,7 +53,7 @@
                   {{ item.question }}
                 </span>
                 <span
-                  class="flex h-9 w-9 shrink-0 items-center justify-center text-2xl"
+                  class="flex h-9 w-9 shrink-0 items-center justify-center"
                   :class="
                     openIndex === index
                       ? 'border border-[#d4cdc4] bg-[#e5dfd6]'
@@ -61,7 +61,10 @@
                   "
                   aria-hidden="true"
                 >
-                  {{ openIndex === index ? '×' : '+' }}
+                  <ChevronDown
+                    class="h-5 w-5 text-neutral-700 transition-transform duration-300 ease-in-out"
+                    :class="openIndex === index ? 'rotate-180' : 'rotate-0'"
+                  />
                 </span>
               </button>
             </h3>
@@ -69,7 +72,6 @@
               v-show="openIndex === index"
               :id="`faq-panel-${item.id}`"
               role="region"
-              class="mt-2"
               :aria-labelledby="`faq-trigger-${item.id}`"
             >
               <p
@@ -86,6 +88,7 @@
 </template>
 
 <script setup>
+import { ChevronDown, ChevronUp } from 'lucide-vue-next'
 const items = [
   {
     id: 'timeline',

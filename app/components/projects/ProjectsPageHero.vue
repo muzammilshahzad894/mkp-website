@@ -16,13 +16,13 @@
     <LayoutAppNavbar />
 
     <div
-      class="relative z-10 mx-auto flex min-h-[min(100dvh,880px)] w-full max-w-[min(100%,88vw,1320px)] flex-col justify-end px-4 pb-14 pt-32 sm:px-6 sm:pb-16 md:pb-20 lg:px-8"
+      class="relative z-10 mx-auto flex min-h-[min(100dvh,880px)] w-full max-w-[min(100%,88vw,1320px)] flex-col justify-end px-4 pb-6 pt-32 sm:px-6 sm:pb-8 md:pb-10 lg:px-8"
     >
       <div class="w-full">
         <!-- One line: OUR (white) + COMPLETE PORTFOLIO (gold) -->
         <h1
           id="portfolio-hero-heading"
-          class="font-serif text-[clamp(1.35rem,3.8vw,2.75rem)] font-semibold uppercase leading-tight tracking-[0.04em] sm:tracking-[0.05em]"
+          class="font-abaya text-[clamp(1.35rem,3.8vw,2.75rem)] uppercase leading-tight tracking-[0.04em] sm:tracking-[0.05em]"
         >
           <span class="text-white">Our</span><span class="text-[#c9b896]"> complete portfolio</span>
         </h1>
@@ -38,7 +38,7 @@
           class="mt-5 flex w-full flex-col gap-6 sm:mt-6 md:flex-row md:items-end md:justify-between md:gap-8 lg:gap-10"
         >
           <p
-            class="shrink-0 font-sans text-[13px] font-normal leading-[1.72] text-white sm:text-[14px] sm:leading-[1.68]"
+            class="shrink-0 font-poppins text-white"
           >
             Discover how MKPDesign transforms ideas into stunning, functional spaces.<br />
             Each project below includes a short overview, images, and key outcomes —
