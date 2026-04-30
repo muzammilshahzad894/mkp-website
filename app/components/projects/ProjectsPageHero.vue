@@ -9,7 +9,7 @@
       role="presentation"
     />
     <div
-      class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/30"
+      class="absolute inset-0 bg-gradient-to-b from-black/12 via-black/16 to-black/22"
       role="presentation"
     />
 
@@ -59,5 +59,5 @@
 </template>
 
 <script setup>
-const heroImage = '/images/home/about/about-house.png'
+const heroImage = '/images/projects/hero.png'
 </script>

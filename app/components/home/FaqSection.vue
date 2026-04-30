@@ -4,16 +4,16 @@
     aria-labelledby="faq-heading"
   >
     <div
-      class="mx-auto w-full max-w-[min(100%,85vw,1400px)] px-5 py-14 sm:px-6 sm:py-16 md:px-8 lg:py-20 xl:py-24"
+      class="mx-auto w-full max-w-[min(100%,85vw,1400px)] px-5 py-14 sm:px-6 sm:py-16 md:px-8 lg:py-16 xl:py-20"
     >
       <h2
         id="faq-heading"
-        class="font-serif text-3xl font-normal uppercase tracking-[0.04em] text-[#c4b59a] sm:text-4xl md:text-[2.35rem]"
+        class="font-abaya text-3xl font-normal uppercase tracking-[0.04em] text-[#c4b59a] sm:text-4xl md:text-[2.35rem]"
       >
         FAQ'S
       </h2>
       <p
-        class="mt-3 max-w-2xl font-sans text-[15px] font-normal leading-relaxed text-neutral-500 sm:text-base"
+        class="mt-3 max-w-2xl font-dm text-[15px] font-normal leading-relaxed text-neutral-500 sm:text-base"
       >
         Have Questions or Need Support? Start Here.
       </p>
@@ -47,13 +47,13 @@
                 @click="toggle(index)"
               >
                 <span
-                  class="min-w-0 flex-1 font-sans text-[15px] leading-snug text-neutral-900 sm:text-base"
+                  class="min-w-0 flex-1 font-poppins text-[18px]"
                   :class="openIndex === index ? 'font-semibold' : 'font-normal'"
                 >
                   {{ item.question }}
                 </span>
                 <span
-                  class="flex h-9 w-9 shrink-0 items-center justify-center font-sans text-lg font-light leading-none text-neutral-800"
+                  class="flex h-9 w-9 shrink-0 items-center justify-center text-2xl"
                   :class="
                     openIndex === index
                       ? 'border border-[#d4cdc4] bg-[#e5dfd6]'
@@ -69,11 +69,11 @@
               v-show="openIndex === index"
               :id="`faq-panel-${item.id}`"
               role="region"
-              class="mt-4"
+              class="mt-2"
               :aria-labelledby="`faq-trigger-${item.id}`"
             >
               <p
-                class="max-w-3xl font-sans text-[14px] font-normal leading-[1.75] text-neutral-500 sm:text-[15px]"
+                class="max-w-3xl font-poppins text-[16px] font-normal leading-[1.75] text-neutral-500"
               >
                 {{ item.answer }}
               </p>

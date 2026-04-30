@@ -3,7 +3,7 @@
     <div class="bg-[#1B1B1B]">
       <!-- CTA: image + overlay + fade into footer -->
       <section
-        class="relative flex min-h-[min(76vh,800px)] flex-col overflow-hidden sm:min-h-[min(74vh,840px)] md:min-h-[min(72vh,880px)]"
+        class="relative flex min-h-[min(55vh,600px)] flex-col overflow-hidden sm:min-h-[min(52vh,560px)] md:min-h-[min(50vh,520px)]"
         aria-labelledby="footer-cta-heading"
       >
         <div
@@ -37,24 +37,25 @@
               <!-- CHANGE 2: Heading size reduced — was 58px/64px, now 42px/46px -->
               <h2
                 id="footer-cta-heading"
-                class="whitespace-nowrap text-center font-abhaya font-bold uppercase leading-[1.2] tracking-normal text-white"
-                style="font-size: clamp(1.3rem, calc(0.6rem + 2.8vw), 2.4rem); font-family: 'Abhaya Libre', Georgia, serif;"
+                class="font-abaya whitespace-nowrap text-center font-abhaya font-bold uppercase leading-[1.2] tracking-normal text-white"
+                style="font-size: clamp(1.3rem, calc(0.6rem + 2.8vw), 2.4rem);"
               >
                 Ready to transform your home?
               </h2>
             </div>
             <p
-              class="mx-auto w-full max-w-[min(56vw,42rem)] text-center font-poppins text-[17px] font-normal leading-[1.5] tracking-normal text-[#FFFFFFBD] sm:max-w-[min(58vw,44rem)] sm:text-[18px] md:max-w-[min(60vw,48rem)]"
+              class="mx-auto w-full max-w-[min(56vw,42rem)] text-center font-poppins text-[#FFFFFF] opacity-75"
             >
               Bring your vision to life with MKPDesign. From the first sketch to the final sign-off, we manage the details so you don't have to. Whether it's a loft conversion, modern extension or full renovation, let's start the conversation and create a space you'll love.
             </p>
             <div class="pt-1">
               <NuxtLink
                 to="/contact"
-                class="box-border inline-flex h-[44px] w-[177px] shrink-0 items-center justify-center gap-3 rounded-[46px] border border-solid border-white bg-transparent px-6 py-2 font-poppins text-[11px] font-medium uppercase tracking-[0.14em] text-white transition hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80"
+                class="box-border inline-flex h-[44px] w-[177px] shrink-0 items-center justify-center gap-3 rounded-[46px] border border-white bg-transparent px-6 py-2 font-abaya text-[11px] font-medium uppercase tracking-[0.14em] text-white transition hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80"
               >
-                <span>Get in touch</span>
-                <span class="text-base font-light leading-none" aria-hidden="true">→</span>
+                <span class="leading-none">Get in touch</span>
+
+                <ArrowRight class="w-5 h-5 translate-y-[1px]" />
               </NuxtLink>
             </div>
           </div>
@@ -77,7 +78,7 @@
               class="inline-flex items-center gap-3 text-white transition hover:opacity-90"
             >
               <img
-                src="/images/brand/mkp-mark.png"
+                src="/images/brand/mkp-wordmark.png"
                 width="52"
                 height="52"
                 class="h-10 w-auto shrink-0 object-contain sm:h-11"
@@ -85,9 +86,6 @@
                 loading="lazy"
                 decoding="async"
               />
-              <span class="font-poppins text-[17px] font-semibold tracking-[0.02em] text-white sm:text-lg">
-                MKPDesign
-              </span>
             </NuxtLink>
             <p
               class="mt-5 max-w-[22rem] font-poppins text-[13px] leading-[1.55] text-[#b8b8b8] sm:mt-6 lg:max-w-[220px]"
@@ -111,7 +109,7 @@
                 :aria-label="block.aria"
               >
                 <p
-                  class="text-[11px] font-semibold uppercase leading-[1.5] tracking-[0.12em] text-[#938F88]"
+                  class="font-poppins text-[13px] font-semibold uppercase leading-[1.5] tracking-[0.12em] text-[#938F88]"
                 >
                   {{ block.title }}
                 </p>
@@ -119,7 +117,7 @@
                   <li v-for="item in block.items" :key="item.to + item.label">
                     <NuxtLink
                       :to="item.to"
-                      class="text-[14px] font-normal capitalize leading-[1.5] tracking-normal text-[#DADADA] transition hover:text-white"
+                      class="font-poppins text-[14px] font-normal capitalize leading-[1.5] tracking-normal text-[#DADADA] transition hover:text-white"
                     >{{ item.label }}</NuxtLink>
                   </li>
                 </ul>
@@ -131,12 +129,12 @@
 
       <div class="border-t border-[#2a2a2a] bg-[#121212]">
         <div
-          class="mx-auto flex max-w-[min(100%,85vw,1400px)] flex-col gap-3 px-5 py-4 font-poppins text-[12px] font-normal leading-normal text-white/85 sm:flex-row sm:items-center sm:justify-between sm:px-8 sm:py-4 md:px-10"
+          class="mx-auto flex max-w-[min(100%,85vw,1400px)] flex-col gap-3 px-5 py-4 font-poppins text-[14px] text-white sm:flex-row sm:items-center sm:justify-between"
         >
           <p>© {{ year }} MKPDesign All Rights Reserved</p>
           <NuxtLink
             to="/terms"
-            class="text-white/85 transition hover:text-white"
+            class="text-white"
           >
             Terms &amp; Conditions
           </NuxtLink>
@@ -147,6 +145,7 @@
 </template>
 
 <script setup>
+import { ArrowRight } from 'lucide-vue-next'
 const ctaImageUrl = '/images/footer/cta-background.png'
 
 const year = new Date().getFullYear()

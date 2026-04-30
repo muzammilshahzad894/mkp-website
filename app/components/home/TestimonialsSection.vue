@@ -4,7 +4,7 @@
     aria-labelledby="testimonials-heading"
   >
     <div
-      class="mx-auto w-full max-w-[min(100%,85vw,1400px)] px-5 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-16 md:px-8 md:pb-24 md:pt-20 lg:pt-20 xl:pb-28 xl:pt-24"
+      class="mx-auto w-full max-w-[min(100%,85vw,1400px)] px-5 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-16 md:px-8"
     >
       <div
         class="flex items-start justify-between gap-3 sm:items-end"
@@ -78,31 +78,23 @@
                 v-for="n in 5"
                 :key="n"
               >
-                <svg
-                  class="h-3.5 w-3.5 text-amber-500 sm:h-4 sm:w-4"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  />
-                </svg>
+                <Star class="h-4 w-4 fill-[#FFBA3B] text-[#FFBA3B]" />
               </li>
             </ul>
             <p
-              class="mt-4 flex-1 font-sans text-[15px] font-semibold leading-[1.75] text-neutral-800"
+              class="mt-4 flex-1 font-poppins text-[15px] font-semibold leading-[1.75] text-neutral-800"
             >
               {{ featured.quote }}
             </p>
             <div class="mt-6 flex items-end justify-between gap-4">
               <div class="min-w-0">
                 <p
-                  class="font-sans text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-900"
+                  class="font-poppins text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-900"
                 >
                   {{ featured.name }}
                 </p>
                 <p
-                  class="mt-1 font-sans text-[13px] font-normal leading-snug text-neutral-500"
+                  class="mt-1 font-poppins text-[13px] font-normal leading-snug text-neutral-500"
                 >
                   {{ featured.role }}
                 </p>
@@ -131,15 +123,7 @@
                 v-for="n in 5"
                 :key="n"
               >
-                <svg
-                  class="h-3.5 w-3.5 text-amber-500"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  />
-                </svg>
+                <Star class="h-4 w-4 fill-[#FFBA3B] text-[#FFBA3B]" />
               </li>
             </ul>
             <p
@@ -150,12 +134,12 @@
             <div class="mt-6 flex items-end justify-between gap-4">
               <div class="min-w-0">
                 <p
-                  class="font-sans text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-900"
+                  class="font-poppins text-[13px] font-bold uppercase"
                 >
                   {{ mobileSmallCard.name }}
                 </p>
                 <p
-                  class="mt-1 font-sans text-[13px] font-normal leading-snug text-neutral-500"
+                  class="mt-1 font-poppins text-[11px]"
                 >
                   {{ mobileSmallCard.role }}
                 </p>
@@ -172,7 +156,7 @@
             </div>
           </article>
           <p
-            class="mt-3 text-center font-sans text-xs text-neutral-500"
+            class="mt-3 text-center font-poppins text-xs text-neutral-500"
             aria-live="polite"
           >
             {{ mobileSlideIndex + 1 }} / 5
@@ -205,19 +189,11 @@
                 v-for="n in 5"
                 :key="n"
               >
-                <svg
-                  class="h-3.5 w-3.5 text-amber-500 sm:h-4 sm:w-4"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  />
-                </svg>
+                <Star class="h-4 w-4 fill-[#FFBA3B] text-[#FFBA3B]" />
               </li>
             </ul>
             <p
-              class="mt-4 flex-1 font-sans text-[15px] font-semibold leading-[1.75] text-neutral-800 sm:text-base"
+              class="mt-4 flex-1 font-poppins text-[15px] font-semibold leading-[1.75] text-neutral-800 sm:text-base"
             >
               {{ featured.quote }}
             </p>
@@ -226,12 +202,12 @@
             >
               <div class="min-w-0">
                 <p
-                  class="font-sans text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-900 sm:text-xs"
+                  class="font-poppins text-[11px] font-bold uppercase text-neutral-900 sm:text-xs"
                 >
                   {{ featured.name }}
                 </p>
                 <p
-                  class="mt-1 font-sans text-[13px] font-normal leading-snug text-neutral-500 sm:text-sm"
+                  class="mt-1 font-poppins text-[13px] font-normal leading-snug text-neutral-500 sm:text-sm"
                 >
                   {{ featured.role }}
                 </p>
@@ -262,19 +238,11 @@
                 v-for="n in 5"
                 :key="n"
               >
-                <svg
-                  class="h-3.5 w-3.5 text-amber-500 sm:h-4 sm:w-4"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  />
-                </svg>
+                <Star class="h-4 w-4 fill-[#FFBA3B] text-[#FFBA3B]" />
               </li>
             </ul>
             <p
-              class="mt-4 flex-1 font-sans text-[15px] font-medium leading-[1.75] text-neutral-600 sm:text-base"
+              class="mt-4 flex-1 font-poppins text-[15px] font-medium leading-[1.75] text-neutral-600 sm:text-base"
             >
               {{ card.quote }}
             </p>
@@ -283,12 +251,12 @@
             >
               <div class="min-w-0">
                 <p
-                  class="font-sans text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-900 sm:text-xs"
+                  class="font-poppins text-[13px] font-bold uppercase"
                 >
                   {{ card.name }}
                 </p>
                 <p
-                  class="mt-1 font-sans text-[13px] font-normal leading-snug text-neutral-500 sm:text-sm"
+                  class="mt-1 font-sans text-[11px] sm:text-sm"
                 >
                   {{ card.role }}
                 </p>
@@ -311,7 +279,7 @@
 </template>
 
 <script setup>
-import { ArrowLeft, ArrowRight } from 'lucide-vue-next'
+import { ArrowLeft, ArrowRight, Star } from 'lucide-vue-next'
 const AVATAR_COLOR = '/images/home/testimonials/client-avatar.png'
 const AVATAR_DARK = '/images/home/testimonials/client-avatar-1.png'
 

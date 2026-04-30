@@ -119,17 +119,24 @@ const filterTabs = [
   { id: 'other', label: 'Other' },
 ]
 
-const placeholderImage = '/images/home/about/about-house.png'
+const project1 = '/images/projects/project-1.png';
+const project2 = '/images/projects/project-2.png';
+const project3 = '/images/projects/project-3.png';
+const project4 = '/images/projects/project-4.png';
+const project5 = '/images/projects/project-5.png';
+const project6 = '/images/projects/project-6.png';
+const project7 = '/images/projects/project-7.png';
+const project8 = '/images/projects/project-8.png';
 
 const allProjects = [
-  { id: '1', title: 'Verdant atelier', categoryLabel: 'Extension', filter: 'extensions', image: placeholderImage, to: '#' },
-  { id: '2', title: 'Verdant atelier', categoryLabel: 'Extension', filter: 'extensions', image: placeholderImage, to: '#' },
-  { id: '3', title: 'Verdant atelier', categoryLabel: 'Extension', filter: 'extensions', image: placeholderImage, to: '#' },
-  { id: '4', title: 'Verdant atelier', categoryLabel: 'Extension', filter: 'extensions', image: placeholderImage, to: '#' },
-  { id: '5', title: 'Verdant atelier', categoryLabel: 'Extension', filter: 'extensions', image: placeholderImage, to: '#' },
-  { id: '6', title: 'Verdant atelier', categoryLabel: 'Extension', filter: 'extensions', image: placeholderImage, to: '#' },
-  { id: '7', title: 'Skylight residence', categoryLabel: 'Conversion', filter: 'conversions', image: placeholderImage, to: '#' },
-  { id: '8', title: 'Riverstone new build', categoryLabel: 'New build', filter: 'new-build', image: placeholderImage, to: '#' },
+  { id: '1', title: 'Verdant atelier', categoryLabel: 'Extension', filter: 'extensions', image: project1, to: '#' },
+  { id: '2', title: 'Verdant atelier', categoryLabel: 'Extension', filter: 'extensions', image: project2, to: '#' },
+  { id: '3', title: 'Verdant atelier', categoryLabel: 'Extension', filter: 'extensions', image: project3, to: '#' },
+  { id: '4', title: 'Verdant atelier', categoryLabel: 'Extension', filter: 'extensions', image: project4, to: '#' },
+  { id: '5', title: 'Verdant atelier', categoryLabel: 'Extension', filter: 'extensions', image: project5, to: '#' },
+  { id: '6', title: 'Verdant atelier', categoryLabel: 'Extension', filter: 'extensions', image: project6, to: '#' },
+  { id: '7', title: 'Skylight residence', categoryLabel: 'Conversion', filter: 'conversions', image: project7, to: '#' },
+  { id: '8', title: 'Riverstone new build', categoryLabel: 'New build', filter: 'new-build', image: project8, to: '#' },
 ]
 
 const visibleProjects = computed(() => {
