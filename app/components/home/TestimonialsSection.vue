@@ -11,7 +11,7 @@
       >
         <h2
           id="testimonials-heading"
-          class="min-w-0 max-w-[calc(100%-5.5rem)] flex-1 text-balance font-serif text-[clamp(0.8125rem,3.6vw,2.05rem)] font-normal uppercase leading-[1.2] tracking-[0.05em] text-neutral-900 sm:max-w-none sm:leading-none sm:tracking-[0.085em] md:tracking-[0.1em] lg:tracking-[0.11em] sm:whitespace-nowrap"
+          class="min-w-0 max-w-[calc(100%-5.5rem)] flex-1 text-balance font-abaya text-[clamp(0.8125rem,3.6vw,3rem)] font-normal uppercase text-neutral-900 sm:max-w-none sm:whitespace-nowrap"
         >
           What our client saying
         </h2>
@@ -33,7 +33,7 @@
             @click="onPrevClick"
           >
             <span class="sr-only">Previous</span>
-            <span aria-hidden="true">←</span>
+            <ArrowLeft class="w-6 h-4" />
           </button>
           <button
             type="button"
@@ -42,7 +42,7 @@
             @click="onNextClick"
           >
             <span class="sr-only">Next</span>
-            <span aria-hidden="true">→</span>
+            <ArrowRight class="w-6 h-4" />
           </button>
         </div>
       </div>
@@ -311,6 +311,7 @@
 </template>
 
 <script setup>
+import { ArrowLeft, ArrowRight } from 'lucide-vue-next'
 const AVATAR_COLOR = '/images/home/testimonials/client-avatar.png'
 const AVATAR_DARK = '/images/home/testimonials/client-avatar-1.png'
 

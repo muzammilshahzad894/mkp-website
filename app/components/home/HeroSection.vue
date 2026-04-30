@@ -16,7 +16,7 @@
     <LayoutAppNavbar />
 
     <div
-      class="relative z-10 flex min-h-screen flex-col items-center justify-center px-6 pb-16 pt-32 text-center sm:px-10 sm:pb-20 sm:pt-36"
+      class="relative z-10 flex min-h-screen -translate-y-6 flex-col items-center justify-center px-6 pb-16 pt-32 text-center sm:px-10 sm:pb-20 sm:pt-36"
     >
       <div class="mb-8 flex flex-col items-center gap-6 sm:mb-10">
         <img
@@ -28,27 +28,27 @@
           loading="eager"
           decoding="async"
         />
-        <div class="space-y-4 sm:space-y-5">
+        <div class="flex flex-col items-center gap-2 sm:gap-3">
           <h1
             id="hero-heading"
-            class="font-display text-4xl font-semibold uppercase tracking-[0.12em] sm:text-5xl md:text-6xl lg:text-7xl"
+            class="font-dm text-4xl uppercase tracking-[0.05em] sm:text-4xl md:text-5xl lg:text-6xl -mt-3"
           >
             MKP Design
           </h1>
           <p
-            class="text-lg font-normal tracking-[0.03em] text-white/95 sm:text-xl md:text-2xl md:font-light"
+            class="font-dm tracking-[0.03em] text-white/95 sm:text-xl md:text-2xl"
           >
             Creating Beautiful Spaces
           </p>
           <p
-            class="mx-auto max-w-2xl font-serif text-[11px] font-semibold uppercase leading-relaxed tracking-[0.18em] text-white/95 sm:text-xs md:text-sm"
+            class="font-abaya  mt-6 uppercase tracking-[0.1em] text-white/95 sm:text-sm md:text-lg"
           >
             We design new builds, extensions &amp; renovations
           </p>
         </div>
       </div>
 
-      <MkpOutlinePillButton to="/contact">
+      <MkpOutlinePillButton to="/contact" class="font-abaya">
         Get in touch
       </MkpOutlinePillButton>
     </div>

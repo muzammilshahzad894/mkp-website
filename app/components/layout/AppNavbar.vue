@@ -3,7 +3,7 @@
     class="absolute inset-x-0 top-0 z-20 border-b border-white/10 bg-white/5 backdrop-blur-md"
   >
     <div
-      class="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-5 py-3.5 sm:px-8 lg:px-10"
+      class="mx-auto flex max-w-[min(100%,85vw,1400px)] items-center justify-between gap-4 px-5 py-3.5 sm:px-8 lg:px-10"
     >
       <NuxtLink
         to="/"
@@ -21,13 +21,13 @@
       </NuxtLink>
 
       <nav
-        class="hidden items-center gap-8 font-sans text-[11px] font-medium uppercase tracking-[0.16em] text-white/95 md:flex lg:gap-10 lg:text-xs"
+        class="font-abaya hidden items-center gap-8 uppercase tracking-[0.16em] text-white/95 md:flex lg:gap-10 lg:text-xs"
         aria-label="Primary"
       >
         <!-- HOME -->
         <NuxtLink
           to="/"
-          class="nav-item relative px-1.5 py-0.5 font-medium transition hover:text-white"
+          class="nav-item relative px-1.5 py-0.5 transition hover:text-white text-[14px]"
           :class="isHome ? 'text-white active-brackets' : 'text-white/75'"
         >
           Home
@@ -36,10 +36,10 @@
         <!-- Services dropdown -->
         <div class="group relative" @mouseenter="activeCategory = 'extensions'">
           <button
-            class="nav-item relative inline-flex items-center gap-1 px-1.5 py-0.5 font-medium transition hover:text-white"
+            class="nav-item relative inline-flex items-center gap-1 px-1.5 py-0.5 font-medium transition hover:text-white text-[14px]"
             :class="isServicesNav ? 'text-white active-brackets' : 'text-white/75'"
           >
-            Services
+            SERVICES
             <svg
               class="h-3 w-3"
               viewBox="0 0 12 12"
@@ -55,7 +55,7 @@
           <!-- Dropdown panel: shifted left so cone aligns over "Services" -->
           <div
             class="pointer-events-none invisible absolute top-full z-30 opacity-0 transition-all duration-150 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100"
-            style="left: -60px; padding-top: 10px; width: 520px;"
+            style="left: -120px; padding-top: 15px; width: 750px;"
             role="region"
             aria-label="Services menu"
           >
@@ -63,8 +63,8 @@
             <div
               style="
                 position: absolute;
-                top: 2px;
-                left: 88px;
+                top: 7px;
+                left: 160px;
                 width: 0;
                 height: 0;
                 border-left: 8px solid transparent;
@@ -81,7 +81,7 @@
             >
               <div class="flex items-stretch">
                 <!-- Left col -->
-                <div class="flex flex-col py-5" style="min-width: 190px;">
+                <div class="flex flex-col py-5" style="min-width: 260px;">
                   <NuxtLink
                     v-for="cat in categories"
                     :key="cat.key"
@@ -90,16 +90,16 @@
                     @mouseenter="activeCategory = cat.key"
                   >
                     <span
-                      class="font-sans uppercase tracking-[0.13em] transition-colors"
+                      class="font-abaya uppercase tracking-[0.13em] transition-colors text-[14px]"
                       :class="activeCategory === cat.key
-                        ? 'text-[11px] font-bold text-neutral-800'
-                        : 'text-[11px] font-normal text-neutral-400'"
+                        ? 'text-[11px] font-bold text-[#8E8169]'
+                        : 'text-[11px] font-normal text-[#BBB09D]'"
                     >
                       {{ cat.label }}
                     </span>
                     <span
-                      class="ml-4 text-[12px] leading-none transition-colors"
-                      :class="activeCategory === cat.key ? 'text-neutral-600' : 'text-neutral-300'"
+                      class="ml-4 text-[20px] leading-none transition-colors"
+                      :class="activeCategory === cat.key ? 'text-[#8E8169]' : 'text-[#BBB09D]'"
                       aria-hidden="true"
                     >{{ activeCategory === cat.key ? '↗' : '→' }}</span>
                   </NuxtLink>
@@ -109,14 +109,14 @@
                 <div class="my-5 w-px self-stretch bg-black/[0.08]" />
 
                 <!-- Right col: stacked vertically -->
-                <div class="flex flex-1 flex-col justify-center gap-0.5 px-7 py-5">
+                <div class="grid flex-1 self-end grid-cols-2 gap-x-8 gap-y-3 px-7 py-5">
                   <NuxtLink
                     v-for="link in activeLinks"
                     :key="link.label"
                     :to="link.to"
-                    class="flex items-center gap-2 py-1.5 font-sans text-[10.5px] font-medium uppercase tracking-[0.13em] text-neutral-600 transition-colors hover:text-neutral-900"
+                    class="flex min-w-[220px] items-start gap-3 font-sans text-[10.5px] font-medium uppercase tracking-[0.13em] text-neutral-600 transition-colors hover:text-neutral-900"
                   >
-                    <span class="text-[10px] text-neutral-400" aria-hidden="true">•</span>
+                    <span class="mt-[1px] text-[13px] leading-none text-neutral-400" aria-hidden="true">•</span>
                     {{ link.label }}
                   </NuxtLink>
                 </div>
@@ -127,7 +127,7 @@
 
         <NuxtLink
           to="/projects"
-          class="nav-item relative px-1.5 py-0.5 font-medium transition hover:text-white"
+          class="nav-item relative px-1.5 py-0.5 font-medium transition hover:text-white text-[14px]"
           :class="isProjects ? 'text-white active-brackets' : 'text-white/75'"
         >
           Projects
@@ -142,7 +142,7 @@
         <!-- CONTACT -->
         <NuxtLink
           to="/contact"
-          class="nav-item relative px-1.5 py-0.5 font-medium transition hover:text-white"
+          class="nav-item relative px-1.5 py-0.5 font-medium transition hover:text-white text-[14px]"
           :class="isContact ? 'text-white active-brackets' : 'text-white/75'"
         >
           Contact
@@ -151,8 +151,8 @@
 
       <div class="shrink-0">
         <MkpOutlinePillButton to="/contact">
-          <span class="hidden sm:inline">Book an appointment</span>
-          <span class="sm:hidden">Book</span>
+          <span class="font-abaya hidden sm:inline">Book an appointment</span>
+          <span class="font-abaya sm:hidden">Book</span>
         </MkpOutlinePillButton>
       </div>
     </div>
@@ -206,18 +206,18 @@ const activeLinks = computed(() => subLinks[activeCategory.value] ?? [])
 .active-brackets::before {
   content: '';
   position: absolute;
-  top: -2px;
+  top: -4px;
   left: -8px;
-  width: 14px;
+  width: 17px;
   height: 6px;
   border-top: 1.5px solid rgba(255, 255, 255, 0.6);
 }
 .active-brackets::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -4px;
   right: -8px;
-  width: 14px;
+  width: 17px;
   height: 6px;
   border-bottom: 1.5px solid rgba(255, 255, 255, 0.6);
 }

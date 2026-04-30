@@ -4,16 +4,16 @@
     aria-labelledby="process-heading"
   >
     <div
-      class="mx-auto w-full max-w-[min(100%,85vw,1400px)] px-5 py-16 sm:px-6 sm:py-20 md:px-8 lg:py-24 xl:py-28"
+      class="mx-auto w-full max-w-[min(100%,85vw,1400px)] px-5 py-16 sm:px-6 sm:py-20 md:px-8 lg:py-16 xl:py-20"
     >
       <h2
         id="process-heading"
-        class="font-serif text-3xl font-normal uppercase leading-tight tracking-[0.14em] sm:text-4xl md:text-5xl"
+        class="font-abaya text-3xl font-normal uppercase leading-tight tracking-[0.14em] sm:text-4xl md:text-5xl"
       >
         <span class="text-white">OUR</span><span class="text-[#c9b8a0]"> PROCESS</span>
       </h2>
       <p
-        class="mt-5 max-w-3xl text-[15px] font-normal leading-relaxed text-neutral-400 sm:text-base"
+        class="mt-5 max-w-3xl text-[15px] font-poppins leading-relaxed text-neutral-400 sm:text-base"
       >
         Architectural firm based in south London, Proudly serving clients
         throughout London and Surrey.
@@ -34,12 +34,12 @@
           :class="articleCellClass(index)"
         >
           <h3
-            class="font-serif text-lg font-normal uppercase tracking-[0.2em] text-[#c9b8a0] sm:text-xl"
+            class="font-abaya text-lg font-normal uppercase tracking-[0.2em] text-[#c9b8a0] sm:text-xl"
           >
             {{ step.title }}
           </h3>
           <p
-            class="mt-4 text-[14px] font-normal leading-[1.75] text-neutral-400 sm:text-[15px]"
+            class="mt-4 text-[14px] font-poppins leading-[1.75] text-neutral-400 sm:text-[15px]"
           >
             {{ step.body }}
           </p>

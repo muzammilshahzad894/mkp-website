@@ -8,7 +8,7 @@
     >
       <h2
         id="about-heading"
-        class="font-serif text-3xl font-normal tracking-[0.02em] text-[#c4b59a] sm:text-4xl md:text-[2.35rem]"
+        class="font-abaya text-3xl font-normal tracking-[0.02em] text-[#c4b59a] sm:text-4xl md:text-[2.35rem]"
       >
         MKP Design
       </h2>
@@ -18,10 +18,10 @@
       />
 
       <div
-        class="mt-8 grid gap-9 sm:mt-9 sm:gap-10 lg:mt-10 lg:grid-cols-[minmax(0,1.22fr)_minmax(0,1fr)] lg:items-stretch lg:gap-x-8 lg:gap-y-0 xl:gap-x-10"
+        class="mt-8 grid gap-9 sm:mt-9 sm:gap-10 lg:mt-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.8fr)] lg:items-stretch lg:gap-x-48 xl:gap-x-48"
       >
         <div
-          class="space-y-5 text-[15px] font-medium leading-[1.75] text-neutral-600 sm:text-base"
+          class="space-y-5 text-[15px] font-medium leading-[1.75] text-neutral-600 sm:text-base font-poppins"
         >
           <p>
             At MKPDesign, We Transform Homes With Thoughtful Design And Expert
@@ -43,7 +43,7 @@
             Here To Help You Create Something Special.
           </p>
           <div class="pt-1">
-            <MkpOutlinePillButton to="/contact" variant="onLight">
+            <MkpOutlinePillButton to="/contact" variant="onLight" class="font-abaya">
               Book an appointment
             </MkpOutlinePillButton>
           </div>
@@ -79,7 +79,7 @@
             <img
               :src="p.src"
               :alt="p.alt"
-              class="h-9 w-auto max-w-[min(160px,34vw)] object-contain opacity-90 grayscale transition hover:opacity-100 hover:grayscale-0 sm:h-10 sm:max-w-[min(184px,24vw)] lg:h-11"
+              class="h-9 w-auto max-w-[min(160px,34vw)] object-contain sm:h-10 sm:max-w-[min(184px,24vw)] lg:h-11"
               loading="lazy"
               decoding="async"
             />
