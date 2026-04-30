@@ -24,7 +24,7 @@
         <!-- Heading -->
         <h1
           id="services-hero-heading"
-          class="font-serif font-bold uppercase text-white text-[clamp(1.6rem,3.2vw,3rem)] leading-[1.13] tracking-[0.04em]"
+          class="font-abaya uppercase text-white text-[clamp(1.6rem,3.2vw,3rem)] leading-[1.13] tracking-[0.04em]"
         >
           Transform your home<br />
           with a <span class="text-[#c9b99a]">beautiful extension</span>
@@ -38,13 +38,13 @@
             class="inline-flex h-10 sm:h-[46px] items-center gap-2 rounded-full
                    border border-white/50 bg-white/15 backdrop-blur-sm
                    px-4 sm:px-6
-                   font-sans text-[9px] sm:text-[10.5px] font-semibold uppercase
+                   font-dm text-[9px] sm:text-[10.5px] font-semibold uppercase
                    tracking-[0.15em] text-white
                    transition hover:bg-white/25
                    whitespace-nowrap"
           >
             Latest Project
-            <span class="text-sm font-light" aria-hidden="true">→</span>
+            <ArrowRight class="w-6 h-4" />
           </NuxtLink>
 
           <!-- Get in Touch -->
@@ -53,13 +53,12 @@
             class="inline-flex h-10 sm:h-[46px] items-center gap-2 rounded-full
                    bg-white
                    px-4 sm:px-6
-                   font-sans text-[9px] sm:text-[10.5px] font-semibold uppercase
+                   font-dm text-[9px] sm:text-[10.5px] font-semibold uppercase
                    tracking-[0.15em] text-neutral-900
                    transition hover:bg-neutral-100
                    whitespace-nowrap"
           >
             Get in Touch
-            <span class="text-sm font-light text-neutral-900" aria-hidden="true">→</span>
           </NuxtLink>
         </div>
       </div>
@@ -68,5 +67,6 @@
 </template>
 
 <script setup>
+import { ArrowRight } from 'lucide-vue-next'
 const heroImageUrl = '/images/services/hero.png'
 </script>

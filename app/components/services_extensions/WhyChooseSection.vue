@@ -14,7 +14,7 @@
         <div>
           <h2
             id="why-choose-heading"
-            class="font-serif font-bold uppercase leading-tight"
+            class="font-abaya uppercase leading-tight"
             style="
               font-size: clamp(1.5rem, 2.4vw, 2.1rem);
               letter-spacing: 0.03em;
@@ -29,8 +29,7 @@
             <li
               v-for="line in bullets"
               :key="line"
-              class="flex items-center gap-3 font-sans text-neutral-700"
-              style="font-size: 13.5px; line-height: 1.7; letter-spacing: 0.01em"
+              class="flex items-center gap-3 font-poppins text-neutral-700"
             >
               <!-- Circle check icon -->
               <span
@@ -47,7 +46,7 @@
                   <path d="M1.5 5l2.5 2.5 4.5-5" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </span>
-              <span>{{ line }}</span>
+              <span clss="text-[#535353]">{{ line }}</span>
             </li>
           </ul>
         </div>

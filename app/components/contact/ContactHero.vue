@@ -19,9 +19,8 @@
         <!-- Heading -->
         <h1
           id="goodfit-heading"
-          class="font-bold uppercase"
+          class="font-abaya uppercase"
           style="
-            font-family: 'Abhaya Libre', Georgia, serif;
             font-size: clamp(1.6rem, 3.8vw, 3.6rem);
             line-height: 1.1;
             letter-spacing: 0.01em;
@@ -43,23 +42,18 @@
           <!-- Col 1 -->
           <div class="sm:pr-6 md:pr-8 lg:pr-10">
             <h2
-              class="uppercase"
+              class="font-abaya uppercase text-white text-[20px] mb-5"
               style="
-                font-family: 'Abhaya Libre', Georgia, serif;
-                font-size: clamp(13px, 1.25vw, 18px);
                 font-weight: 500;
                 letter-spacing: 0.08em;
-                color: #ffffff;
                 line-height: 1.3;
               "
             >Value Intelligent Design</h2>
             <p
+              class="font-poppins text-white text-[14px]"
               style="
-                font-family: 'Poppins', sans-serif;
-                font-size: clamp(11.5px, 0.85vw, 13px);
                 font-weight: 400;
                 line-height: 1.72;
-                color: rgba(255,255,255,0.82);
                 margin-top: 12px;
               "
             >
@@ -70,23 +64,18 @@
           <!-- Col 2 -->
           <div class="border-t border-white pt-8 sm:border-l sm:border-t-0 sm:px-6 sm:pt-0 md:px-8 lg:px-10">
             <h2
-              class="uppercase"
+              class="font-abaya uppercase text-white text-[20px] mb-5"
               style="
-                font-family: 'Abhaya Libre', Georgia, serif;
-                font-size: clamp(13px, 1.25vw, 18px);
                 font-weight: 500;
                 letter-spacing: 0.08em;
-                color: #ffffff;
                 line-height: 1.3;
               "
             >You Expect Precision</h2>
             <p
+              class="font-poppins text-white text-[14px]"
               style="
-                font-family: 'Poppins', sans-serif;
-                font-size: clamp(11.5px, 0.85vw, 13px);
                 font-weight: 400;
                 line-height: 1.72;
-                color: rgba(255,255,255,0.82);
                 margin-top: 12px;
               "
             >
@@ -97,23 +86,18 @@
           <!-- Col 3 -->
           <div class="border-t border-white pt-8 sm:border-l sm:border-t-0 sm:pl-6 sm:pt-0 md:pl-8 lg:pl-10">
             <h2
-              class="uppercase"
+              class="font-abaya uppercase text-white text-[20px] mb-5"
               style="
-                font-family: 'Abhaya Libre', Georgia, serif;
-                font-size: clamp(13px, 1.25vw, 18px);
                 font-weight: 500;
                 letter-spacing: 0.08em;
-                color: #ffffff;
                 line-height: 1.3;
               "
             >True Design Partnership</h2>
             <p
+              class="font-poppins text-white text-[14px]"
               style="
-                font-family: 'Poppins', sans-serif;
-                font-size: clamp(11.5px, 0.85vw, 13px);
                 font-weight: 400;
                 line-height: 1.72;
-                color: rgba(255,255,255,0.82);
                 margin-top: 12px;
               "
             >

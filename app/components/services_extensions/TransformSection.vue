@@ -17,7 +17,7 @@
         <div>
           <h2
             id="transform-heading"
-            class="font-serif font-bold uppercase"
+            class="font-abaya uppercase"
             style="
               font-size: clamp(1.6rem, 2.5vw, 2.2rem);
               line-height: 1.15;
@@ -28,12 +28,10 @@
             <span style="color: #c9a96e">Your Home</span>
           </h2>
           <p
-            class="mt-3 font-sans"
+            class="mt-3 font-poppins text-[#938F88] text-[14px]"
             style="
-              color: rgba(255,255,255,0.7);
-              font-size: 13.5px;
               line-height: 1.75;
-              max-width: 420px;
+              max-width: 600px;
               letter-spacing: 0.01em;
             "
           >
@@ -46,7 +44,7 @@
         <div class="shrink-0">
           <NuxtLink
             to="/contact"
-            class="inline-flex items-center gap-2.5 rounded-full font-sans font-semibold uppercase text-white transition hover:bg-white/10"
+            class="inline-flex items-center gap-1.5 rounded-full font-sans font-semibold uppercase text-white transition hover:bg-white/10"
             style="
               height: 44px;
               padding: 0 24px;
@@ -56,7 +54,7 @@
             "
           >
             Book An Appointment
-            <span style="font-size: 14px; font-weight: 300" aria-hidden="true">→</span>
+            <ArrowRight class="w-6 h-4" />
           </NuxtLink>
         </div>
       </div>
@@ -95,10 +93,8 @@
         <ul class="space-y-8 lg:space-y-10 lg:pt-2">
           <li v-for="item in services" :key="item.title">
             <h3
-              class="font-serif font-semibold uppercase"
+              class="font-abaya uppercase text-[#c9a96e] text-[18px]"
               style="
-                color: #c9a96e;
-                font-size: clamp(0.8rem, 1.2vw, 1rem);
                 letter-spacing: 0.14em;
                 line-height: 1.3;
               "
@@ -106,13 +102,7 @@
               {{ item.title }}
             </h3>
             <p
-              class="mt-2.5 font-sans"
-              style="
-                color: rgba(255,255,255,0.7);
-                font-size: 13.5px;
-                line-height: 1.8;
-                letter-spacing: 0.01em;
-              "
+              class="mt-2.5 font-poppins text-[#938F88]"
             >
               {{ item.body }}
             </p>
@@ -124,6 +114,7 @@
 </template>
 
 <script setup>
+import { ArrowRight } from 'lucide-vue-next'
 const extensionsImg1 = '/images/services/transform-1.png';
 const extensionsImg2 = '/images/services/transform-2.png';
 

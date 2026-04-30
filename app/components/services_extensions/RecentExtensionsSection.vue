@@ -12,7 +12,7 @@
       <div class="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
         <h2
           id="recent-extensions-heading"
-          class="shrink-0 font-serif font-bold uppercase"
+          class="shrink-0 font-abaya uppercase"
           style="
             font-size: clamp(1.6rem, 2.6vw, 2.4rem);
             line-height: 1.15;
@@ -23,13 +23,7 @@
           Our Recent <span style="color: #c9a96e">Extensions</span>
         </h2>
         <p
-          class="font-sans text-neutral-600"
-          style="
-            max-width: 480px;
-            font-size: 14px;
-            line-height: 1.85;
-            letter-spacing: 0.01em;
-          "
+          class="font-poppins text-neutral-600 max-w-[480px]"
         >
           With A Passion For Thoughtful Design And Meticulous Planning,
           MKPDesign Transforms Ideas Into Functional, Beautiful Spaces
