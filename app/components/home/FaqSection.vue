@@ -10,7 +10,7 @@
         id="faq-heading"
         class="font-abaya text-3xl font-normal uppercase tracking-[0.04em] text-[#c4b59a] sm:text-4xl md:text-[2.35rem]"
       >
-        FAQ'S
+        COMMON QUESTIONS
       </h2>
       <p
         class="mt-3 max-w-2xl font-dm text-[15px] font-normal leading-relaxed text-neutral-500 sm:text-base"
@@ -91,34 +91,60 @@
 import { ChevronDown, ChevronUp } from 'lucide-vue-next'
 const items = [
   {
-    id: 'timeline',
-    question: 'How long does an architectural project typically take?',
+    id: '1',
+    question: 'How do I know if my project is worth doing?',
     answer:
-      'Lorem ipsum dolor sit amet consectetur. Venenatis congue augue placerat mauris cras ac tortor consectetur. A sit euismod proin id nibh. Convallis nibh risus phasellus et. Sem lectus amet posuere in in aliquet venenatis.'
+      "If done properly, most projects add more than just space, they add real value to how you live and to the property itself. We assess your home early on and guide you honestly on what’s worth doing and what isn’t."
   },
   {
-    id: 'start',
-    question: 'How can I get started with MKP Design?',
-    answer:
-      'Lorem ipsum dolor sit amet consectetur. Venenatis congue augue placerat mauris cras ac tortor consectetur. A sit euismod proin id nibh. Convallis nibh risus phasellus et. Sem lectus amet posuere in in aliquet venenatis.'
+    id: '2',
+    question: 'How long does the process take?',
+    answer: "Every project is different, but typically design and planning can take a few months depending on complexity and council timelines. We’ll give you a clear idea from the start so you know what to expect."
   },
   {
-    id: 'cost',
-    question: 'What is the cost of your services?',
-    answer:
-      'Lorem ipsum dolor sit amet consectetur. Venenatis congue augue placerat mauris cras ac tortor consectetur. A sit euismod proin id nibh. Convallis nibh risus phasellus et. Sem lectus amet posuere in in aliquet venenatis.'
+    id: '3',
+    question: 'How long does planning permission take?',
+    answer: "Most planning applications are decided within 8 weeks from the date they are validated by the council. We manage the submission process carefully to avoid delays and give your application the best chance of a smooth approval."
   },
   {
-    id: 'interior',
-    question: 'Do you offer interior design services?',
-    answer:
-      'Lorem ipsum dolor sit amet consectetur. Venenatis congue augue placerat mauris cras ac tortor consectetur. A sit euismod proin id nibh. Convallis nibh risus phasellus et. Sem lectus amet posuere in in aliquet venenatis.'
+    id: '4',
+    question: 'Can you help maximise the value of my property?',
+    answer: "Yes. This is something we consider from day one. It’s not just about adding space, it’s about creating something that feels well designed, which is what buyers actually respond to."
   },
   {
-    id: 'permits',
-    question: 'Do you assist with permits and regulatory approvals?',
-    answer:
-      'Lorem ipsum dolor sit amet consectetur. Venenatis congue augue placerat mauris cras ac tortor consectetur. A sit euismod proin id nibh. Convallis nibh risus phasellus et. Sem lectus amet posuere in in aliquet venenatis.'
+    id: '5',
+    question: 'What if I’m not sure what I want yet?',
+    answer: "That’s completely normal. Most clients don’t come with a fixed idea. We guide you through options, challenge what doesn’t work, and help shape a direction that makes sense for your home."
+  },
+  {
+    id: '6',
+    question: 'Do you deal with planning permission and approvals?',
+    answer: "Yes. We handle all drawings and submissions, and guide you through the process to give your project the best chance of approval."
+  },
+  {
+    id: '7',
+    question: 'Will you tell me if something isn’t a good idea?',
+    answer: "Absolutely. We don’t just agree with everything. If something won’t work or could be done better, we’ll explain why and suggest a better approach."
+  },
+  {
+    id: '8',
+    question: 'How much do your services cost?',
+    answer: "Fees vary depending on the size and complexity of the project. We provide clear, upfront pricing so you know exactly what’s involved before anything starts."
+  },
+  {
+    id: '9',
+    question: 'Do you work with builders?',
+    answer: "Yes. We can recommend trusted builders we’ve worked with before and ensure the design is carried through properly during construction."
+  },
+  {
+    id: '10',
+    question: 'How do I get started?',
+    answer: "We offer a free online consultation to get things moving. Simply send us your address and a brief outline of what you’re looking to do. We’ll review your property and let you know what’s possible before you commit to anything. If you’d like to move forward, we’ll then provide a clear quote based on your project."
+  },
+  {
+    id: '11',
+    question: 'Do you offer site visits?',
+    answer: "Yes, we also offer on-site consultations where we can walk through your home and explore ideas in more detail. <br /> This is charged at £50 per hour, plus £20 for travel."
   }
 ]
 

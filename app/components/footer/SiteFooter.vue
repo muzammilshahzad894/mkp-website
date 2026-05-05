@@ -8,14 +8,14 @@
       >
         <div
           class="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          :style="{ backgroundImage: `url('${ctaImageUrl}')` }"
+          :style="{ backgroundImage: `url('${footerBgImage}')` }"
           role="presentation"
         />
 
         <!-- Uniform light overlay across full image -->
         <div
           class="absolute inset-0"
-          style="background: rgba(0,0,0,0.32);"
+          style="background: rgba(0,0,0,0.38);"
           role="presentation"
         />
         <!-- Bottom fade into footer -->
@@ -146,7 +146,7 @@
 
 <script setup>
 import { ArrowRight } from 'lucide-vue-next'
-const ctaImageUrl = '/images/footer/cta-background.png'
+const footerBgImage = '/images/footer/footer_bg_img.jpg'
 
 const year = new Date().getFullYear()
 
