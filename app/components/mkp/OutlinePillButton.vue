@@ -5,7 +5,7 @@
     :class="btnClass"
   >
     <span><slot /></span>
-    <span class="text-base leading-none" aria-hidden="true">→</span>
+    <ArrowRight class="w-6 h-4" />
   </NuxtLink>
   <a
     v-else-if="href"
@@ -13,7 +13,7 @@
     :class="btnClass"
   >
     <span><slot /></span>
-    <span class="text-base leading-none" aria-hidden="true">→</span>
+    <ArrowRight class="w-6 h-4" />
   </a>
   <button
     v-else
@@ -21,11 +21,12 @@
     :class="btnClass"
   >
     <span><slot /></span>
-    <span class="text-base leading-none" aria-hidden="true">→</span>
+    <ArrowRight class="w-6 h-4" />
   </button>
 </template>
 
 <script setup>
+import { ArrowRight } from 'lucide-vue-next'
 const props = defineProps({
   to: {
     type: [String, Object],

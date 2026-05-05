@@ -19,7 +19,8 @@ export default {
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         display: ['Montserrat', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        serif: ['Cormorant Garamond', 'Georgia', 'Times New Roman', 'serif']
+        serif: ['Cormorant Garamond', 'Georgia', 'Times New Roman', 'serif'],
+        script: ['"Great Vibes"', 'cursive']
       }
     }
   },

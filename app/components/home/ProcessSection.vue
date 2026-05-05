@@ -15,8 +15,7 @@
       <p
         class="mt-5 max-w-3xl text-[15px] font-poppins leading-relaxed text-neutral-400 sm:text-base"
       >
-        Architectural firm based in south London, Proudly serving clients
-        throughout London and Surrey.
+        Architectural firm based in south london, proudly serving clients throughout london, surrey and beyond.
       </p>
 
       <div
@@ -54,17 +53,17 @@ const steps = [
   {
     title: 'Discuss',
     body:
-      'We begin by understanding your home goals. Through a thorough consultation and site assessment, we identify your priorities, highlight potential challenges, and clearly guide you in the initial design direction.'
+      "Every project starts with understanding how you actually live. We look at your home, how it works today, what’s not working, and where the real opportunity is. Not just what you ask for, but what you actually need. This stage sets the direction properly."
   },
   {
     title: 'Design',
     body:
-      'We turn your ideas into reality with concepts that enhance your space and potential. We evaluate constraints, seek creative opportunities, and refine every detail, all while keeping your vision at the forefront.'
+      "This is where things start to take shape. We explore layouts, refine proportions, and resolve how the space will truly function. Storage, flow, light, and connection are all considered early, not added later. Every decision has a purpose."
   },
   {
     title: 'Deliver',
     body:
-      'We handle all drawings and planning documents, ensuring open communication. From initial designs to project completion, we stay engaged to support you, coordinate with contractors, and ensure smooth operations.'
+      "Once the design is right, we take it through planning and technical stages with clarity. We handle the drawings, guide you through approvals, and ensure everything is properly thought through so the build runs as it should. No guesswork. No unnecessary back and forth."
   }
 ]
 

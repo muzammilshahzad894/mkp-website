@@ -1,278 +1,188 @@
 <template>
   <section
-    class="bg-[#e5e3d8] text-neutral-800"
+    class="bg-[#e8e4dc] text-neutral-900"
     aria-labelledby="testimonials-heading"
   >
     <div
       class="mx-auto w-full max-w-[min(100%,85vw,1400px)] px-5 pb-16 pt-14 sm:px-6 sm:pb-20 sm:pt-16 md:px-8"
     >
-      <div
-        class="flex items-start justify-between gap-3 sm:items-end"
-      >
+      <!-- Header -->
+      <div class="flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between sm:gap-6">
         <h2
           id="testimonials-heading"
-          class="min-w-0 max-w-[calc(100%-5.5rem)] flex-1 text-balance font-abaya text-[clamp(0.8125rem,3.6vw,3rem)] font-normal uppercase text-neutral-900 sm:max-w-none sm:whitespace-nowrap"
+          class="font-abaya text-[clamp(1.25rem,2.8vw,2.25rem)] uppercase leading-tight tracking-[0.04em] text-neutral-900"
         >
-          What our client saying
+          WHY CLIENTS CHOOSE US
         </h2>
-        <div
-          class="flex shrink-0 gap-2 sm:gap-2.5"
-          role="group"
-          aria-label="Testimonial slides"
-        >
+        <div class="flex shrink-0 gap-2.5" role="group" aria-label="Testimonial navigation">
           <button
             type="button"
-            class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-900 bg-transparent text-[15px] font-normal leading-none text-neutral-900 transition hover:bg-neutral-900/5 sm:h-11 sm:w-11 sm:text-base"
-            aria-label="Previous testimonials"
-            :disabled="!canPrev"
-            :class="
-              !canPrev
-                ? 'cursor-not-allowed border-neutral-400 text-neutral-400 hover:bg-transparent'
-                : ''
-            "
-            @click="onPrevClick"
+            :disabled="currentPage === 0"
+            class="flex h-10 w-10 items-center justify-center rounded-full border transition sm:h-11 sm:w-11"
+            :class="currentPage === 0
+              ? 'cursor-not-allowed border-neutral-300 bg-[#f2f0ea] text-neutral-300'
+              : 'border-neutral-900 bg-[#f2f0ea] text-neutral-900 hover:bg-white'"
+            aria-label="Previous"
+            @click="goPrev"
           >
-            <span class="sr-only">Previous</span>
-            <ArrowLeft class="w-6 h-4" />
+            <ArrowLeft class="h-4 w-4" stroke-width="1.75" />
           </button>
           <button
             type="button"
-            class="flex h-10 w-10 items-center justify-center rounded-full border border-neutral-900 bg-neutral-900 text-[15px] font-normal leading-none text-white transition hover:bg-neutral-800 sm:h-11 sm:w-11 sm:text-base"
-            aria-label="Next testimonials"
-            @click="onNextClick"
+            :disabled="currentPage === LAST_PAGE"
+            class="flex h-10 w-10 items-center justify-center rounded-full border transition sm:h-11 sm:w-11"
+            :class="currentPage === LAST_PAGE
+              ? 'cursor-not-allowed border-neutral-300 bg-neutral-300 text-white'
+              : 'border-neutral-900 bg-neutral-900 text-white hover:bg-neutral-800'"
+            aria-label="Next"
+            @click="goNext"
           >
-            <span class="sr-only">Next</span>
-            <ArrowRight class="w-6 h-4" />
+            <ArrowRight class="h-4 w-4" stroke-width="1.75" />
           </button>
         </div>
       </div>
 
-      <div
-        class="mt-9 sm:mt-10"
-        role="region"
-        aria-label="Client testimonials"
-        aria-live="polite"
-      >
-        <!-- Mobile: one testimonial at a time -->
-        <div class="lg:hidden">
-          <article
-            v-if="mobileSlideIndex === 0"
-            class="flex min-h-[280px] flex-col border border-neutral-300/50 bg-[#efede5] p-6"
-          >
-            <div
-              class="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-neutral-300/40"
-            >
-              <img
-                src="/images/home/testimonials/facade.png"
-                alt="Brick facade and window detail from a residential project"
-                class="h-full w-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <ul
-              class="mt-5 flex list-none gap-1 p-0"
-              aria-hidden="true"
-            >
-              <li
-                v-for="n in 5"
-                :key="n"
-              >
-                <Star class="h-4 w-4 fill-[#FFBA3B] text-[#FFBA3B]" />
-              </li>
-            </ul>
-            <p
-              class="mt-4 flex-1 font-poppins text-[15px] font-semibold leading-[1.75] text-neutral-800"
-            >
-              {{ featured.quote }}
-            </p>
-            <div class="mt-6 flex items-end justify-between gap-4">
-              <div class="min-w-0">
-                <p
-                  class="font-poppins text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-900"
-                >
-                  {{ featured.name }}
-                </p>
-                <p
-                  class="mt-1 font-poppins text-[13px] font-normal leading-snug text-neutral-500"
-                >
-                  {{ featured.role }}
-                </p>
-              </div>
-              <img
-                :src="featured.avatarSrc"
-                alt=""
-                class="h-14 w-14 shrink-0 object-cover"
-                width="56"
-                height="56"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-          </article>
-          <article
-            v-else
-            :key="'m-' + mobileSlideIndex + '-' + mobileSmallCard.id"
-            class="flex min-h-[260px] flex-col border border-neutral-300/50 bg-[#efede5] p-6"
-          >
-            <ul
-              class="flex list-none gap-1 p-0"
-              aria-hidden="true"
-            >
-              <li
-                v-for="n in 5"
-                :key="n"
-              >
-                <Star class="h-4 w-4 fill-[#FFBA3B] text-[#FFBA3B]" />
-              </li>
-            </ul>
-            <p
-              class="mt-4 flex-1 font-sans text-[15px] font-medium leading-[1.75] text-neutral-600"
-            >
-              {{ mobileSmallCard.quote }}
-            </p>
-            <div class="mt-6 flex items-end justify-between gap-4">
-              <div class="min-w-0">
-                <p
-                  class="font-poppins text-[13px] font-bold uppercase"
-                >
-                  {{ mobileSmallCard.name }}
-                </p>
-                <p
-                  class="mt-1 font-poppins text-[11px]"
-                >
-                  {{ mobileSmallCard.role }}
-                </p>
-              </div>
-              <img
-                :src="mobileSmallCard.avatarSrc"
-                alt=""
-                class="h-14 w-14 shrink-0 object-cover"
-                width="56"
-                height="56"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-          </article>
-          <p
-            class="mt-3 text-center font-poppins text-xs text-neutral-500"
-            aria-live="polite"
-          >
-            {{ mobileSlideIndex + 1 }} / 5
-          </p>
-        </div>
-
-        <!-- Desktop: full grid -->
+      <!-- ─── DESKTOP (lg+): sliding 3-column grid ─── -->
+      <div class="mt-10 hidden overflow-hidden lg:block sm:mt-12">
         <div
-          class="hidden lg:grid lg:auto-rows-[minmax(0,1fr)] lg:grid-cols-[minmax(0,1.12fr)_minmax(0,1fr)_minmax(0,1fr)] lg:grid-rows-2 lg:items-stretch lg:gap-5"
+          class="flex transition-transform duration-500 ease-in-out"
+          :style="{ transform: `translateX(-${currentPage * 100}%)` }"
         >
-          <article
-            class="flex h-full flex-col border border-neutral-300/50 bg-[#efede5] p-6 sm:col-span-2 sm:p-8 lg:col-span-1 lg:row-span-2 lg:min-h-0 lg:p-8"
+          <!--
+            We render all pages side-by-side in one wide flex row.
+            Page 0 → reviews[0,1,2]
+            Page 1 → reviews[3,4] + Google card
+          -->
+          <div
+            v-for="(page, pageIdx) in desktopPages"
+            :key="pageIdx"
+            class="grid w-full shrink-0 grid-cols-3 gap-5"
           >
-            <div
-              class="relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-neutral-300/40"
+            <article
+              v-for="cell in page"
+              :key="cell.key"
+              class="flex min-h-[380px] flex-col bg-[#f2f0ea] px-7 pb-10 pt-7 shadow-sm"
             >
-              <img
-                src="/images/home/testimonials/facade.png"
-                alt="Brick facade and window detail from a residential project"
-                class="h-full w-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-            <ul
-              class="mt-5 flex list-none gap-1 p-0"
-              aria-hidden="true"
-            >
-              <li
-                v-for="n in 5"
-                :key="n"
-              >
-                <Star class="h-4 w-4 fill-[#FFBA3B] text-[#FFBA3B]" />
-              </li>
-            </ul>
-            <p
-              class="mt-4 flex-1 font-poppins text-[15px] font-semibold leading-[1.75] text-neutral-800 sm:text-base"
-            >
-              {{ featured.quote }}
-            </p>
-            <div
-              class="mt-6 flex items-end justify-between gap-4"
-            >
-              <div class="min-w-0">
-                <p
-                  class="font-poppins text-[11px] font-bold uppercase text-neutral-900 sm:text-xs"
-                >
-                  {{ featured.name }}
-                </p>
-                <p
-                  class="mt-1 font-poppins text-[13px] font-normal leading-snug text-neutral-500 sm:text-sm"
-                >
-                  {{ featured.role }}
-                </p>
-              </div>
-              <img
-                :src="featured.avatarSrc"
-                alt=""
-                class="h-14 w-14 shrink-0 object-cover sm:h-16 sm:w-16"
-                width="64"
-                height="64"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-          </article>
+              <!-- Label + rule -->
+              <p class="font-abaya text-[13px] font-semibold uppercase tracking-[0.2em] text-neutral-900">
+                {{ cell.kind === 'google' ? 'Google Reviews' : 'Client Testimonial' }}
+              </p>
+              <div class="mt-2 h-px w-full bg-neutral-900" aria-hidden="true" />
 
-          <article
-            v-for="(card, i) in small"
-            :key="'slot-' + i"
-            class="flex h-full min-h-[200px] flex-col border border-neutral-300/50 bg-[#efede5] p-6 sm:min-h-[220px] sm:p-7 lg:min-h-0"
-            :class="smallCellClass(i)"
-          >
-            <ul
-              class="flex list-none gap-1 p-0"
-              aria-hidden="true"
-            >
-              <li
-                v-for="n in 5"
-                :key="n"
-              >
-                <Star class="h-4 w-4 fill-[#FFBA3B] text-[#FFBA3B]" />
-              </li>
-            </ul>
-            <p
-              class="mt-4 flex-1 font-poppins text-[15px] font-medium leading-[1.75] text-neutral-600 sm:text-base"
-            >
-              {{ card.quote }}
-            </p>
-            <div
-              class="mt-6 flex items-end justify-between gap-4"
-            >
-              <div class="min-w-0">
-                <p
-                  class="font-poppins text-[13px] font-bold uppercase"
-                >
-                  {{ card.name }}
+              <!-- Testimonial content -->
+              <template v-if="cell.kind === 'review'">
+                <div class="mt-7 flex justify-center">
+                  <img
+                    :src="cell.photo"
+                    alt=""
+                    class="h-[5.75rem] w-[5.75rem] rounded-full object-cover ring-1 ring-black/5"
+                    width="92"
+                    height="92"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <p class="mt-6 text-center font-script text-[clamp(1.6rem,2.2vw,2.1rem)] leading-none text-neutral-900">
+                  {{ cell.name }}
                 </p>
-                <p
-                  class="mt-1 font-sans text-[11px] sm:text-sm"
-                >
-                  {{ card.role }}
+                <p class="mt-5 flex-1 text-center font-abaya text-[16px] italic leading-relaxed text-neutral-800">
+                  "{{ cell.quote }}"
                 </p>
-              </div>
-              <img
-                :src="card.avatarSrc"
-                alt=""
-                class="h-14 w-14 shrink-0 object-cover sm:h-16 sm:w-16"
-                width="64"
-                height="64"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-          </article>
+                <div class="mt-8 flex justify-center gap-0.5" aria-label="5 out of 5 stars">
+                  <Star v-for="n in 5" :key="n" class="h-4 w-4 fill-[#FFBA3B] text-[#FFBA3B]" aria-hidden="true" />
+                </div>
+              </template>
+
+              <!-- Google Reviews content -->
+              <template v-else>
+                <div class="flex flex-1 flex-col items-center justify-center gap-4 py-6 text-center">
+                  <div class="flex gap-1.5">
+                    <Star v-for="n in 5" :key="n" class="h-5 w-5 fill-[#FFBA3B] text-[#FFBA3B]" aria-hidden="true" />
+                  </div>
+                  <p class="font-abaya text-2xl font-semibold text-neutral-900">Rated 5 stars on Google</p>
+                  <p class="max-w-[14rem] font-abaya text-neutral-600">Read more from our clients…</p>
+                  
+                    <a href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="mt-1 font-abaya font-bold text-neutral-900 underline underline-offset-4 transition hover:opacity-80"
+                  >
+                    View all reviews <span aria-hidden="true">→</span>
+                  </a>
+                </div>
+              </template>
+            </article>
+          </div>
         </div>
+      </div>
+
+      <!-- ─── MOBILE: one card at a time ─── -->
+      <div class="mt-8 lg:hidden">
+        <div class="overflow-hidden">
+          <div
+            class="flex transition-transform duration-500 ease-in-out"
+            :style="{ transform: `translateX(-${mobileIndex * 100}%)` }"
+          >
+            <!-- 5 review cards + 1 Google card = 6 slides -->
+            <article
+              v-for="review in reviews"
+              :key="review.key"
+              class="flex min-h-[320px] w-full shrink-0 flex-col bg-[#f2f0ea] px-6 pb-8 pt-6 shadow-sm"
+            >
+              <p class="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-900">
+                Client Testimonial
+              </p>
+              <div class="mt-2 h-px w-full bg-neutral-900" aria-hidden="true" />
+              <div class="mt-6 flex justify-center">
+                <img
+                  :src="review.photo"
+                  alt=""
+                  class="h-[5.5rem] w-[5.5rem] rounded-full object-cover ring-1 ring-black/5"
+                  width="88"
+                  height="88"
+                  loading="lazy"
+                />
+              </div>
+              <p class="mt-5 text-center font-script text-[clamp(1.5rem,6vw,2rem)] leading-none text-neutral-900">
+                {{ review.name }}
+              </p>
+              <p class="mt-5 flex-1 text-center font-serif text-[15px] italic leading-relaxed text-neutral-800">
+                "{{ review.quote }}"
+              </p>
+              <div class="mt-8 flex justify-center gap-0.5" aria-label="5 out of 5 stars">
+                <Star v-for="n in 5" :key="n" class="h-4 w-4 fill-[#FFBA3B] text-[#FFBA3B]" aria-hidden="true" />
+              </div>
+            </article>
+
+            <!-- Google card (slide 6) -->
+            <article class="flex min-h-[320px] w-full shrink-0 flex-col bg-[#f2f0ea] px-6 pb-8 pt-6 shadow-sm">
+              <p class="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-900">
+                Google Reviews
+              </p>
+              <div class="mt-2 h-px w-full bg-neutral-900" aria-hidden="true" />
+              <div class="flex flex-1 flex-col items-center justify-center gap-4 py-8 text-center">
+                <div class="flex gap-1">
+                  <Star v-for="n in 5" :key="n" class="h-5 w-5 fill-[#FFBA3B] text-[#FFBA3B]" aria-hidden="true" />
+                </div>
+                <p class="font-serif text-lg font-semibold text-neutral-900">Rated 5 stars on Google</p>
+                <p class="max-w-xs font-serif text-sm text-neutral-600">Read more from our clients…</p>
+                
+                  <a href="https://www.google.com/search?q=MKP+Design+reviews"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="mt-2 font-serif text-sm font-medium text-neutral-900 underline underline-offset-4 transition hover:opacity-80"
+                >
+                  View all reviews <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- Mobile page indicator -->
+        <p class="mt-4 text-center font-sans text-xs text-neutral-500" aria-live="polite">
+          {{ mobileIndex + 1 }} / {{ MOBILE_TOTAL }}
+        </p>
       </div>
     </div>
   </section>
@@ -280,218 +190,95 @@
 
 <script setup>
 import { ArrowLeft, ArrowRight, Star } from 'lucide-vue-next'
-const AVATAR_COLOR = '/images/home/testimonials/client-avatar.png'
-const AVATAR_DARK = '/images/home/testimonials/client-avatar-1.png'
 
-const liamQuote =
-  'They delivered a space that feels both luxurious and practical.'
-
-const michaelLong =
-  'Impressive work ethic and design sense. They delivered a space that feels both luxurious and practical.'
-
-const pool = [
-  {
-    id: '1',
-    quote: liamQuote,
-    name: 'Liam Johnson',
-    role: 'Engineer',
-    avatarSrc: AVATAR_DARK
+// ─── Data ───────────────────────────────────────────────────────────────────
+const reviews = [
+  { 
+    key: 'r1',
+    name: 'Herve Graciet',
+    photo: '/images/home/testimonials/herve.jpg',
+    quote: "We cannot recommend MKPDesign enough; we had bought a very old 1930s house in Essex, MKPDesign helped us transform it into the most amazing property, contemporary enough with some retained features. Mustapha has amazing ideas, he always pushed the boundary with us, encouraging us to be ambitious with the designs and getting out of our comfort zone. We cannot thank you enough"
   },
-  {
-    id: '2',
-    quote: michaelLong,
-    name: 'Michael Carter',
-    role: 'Apartment owner',
-    avatarSrc: AVATAR_COLOR
+  { 
+    key: 'r2', 
+    name: 'Emmanuel Afr iyie',
+    photo: '/images/home/testimonials/emmanuel.jpeg', 
+    quote: "Working with MKPDesign was an exceptional experience. Their attention to detail, innovative design solutions, and commitment to understanding our vision truly set them apart. From concept to completion, Mustapha maintained excellent communication, site visits, ensuring every step of the process was smooth and collaborative. Highly recommend for anyone seeking a creative and reliable architect!" 
   },
-  {
-    id: '3',
-    quote: liamQuote,
-    name: 'Michael Carter',
-    role: 'Apartment owner',
-    avatarSrc: AVATAR_COLOR
+  { 
+    key: 'r3', 
+    name: 'Peter Labd', 
+    photo: '/images/home/testimonials/peter.png', 
+    quote: "MKPDesign was very easy to work with, they're creative, helpful, kind and trustworthy. Their approach is ‘customer first’, they understand customers needs and preferences and return with great ideas, sometimes practical, sometimes out of the box. Mustapha is very good in his profession he is smart, and has a kind personality. Highly recommended" 
   },
-  {
-    id: '4',
-    quote:
-      'From first meeting to handover, MKP kept everything clear and moving forward without drama.',
-    name: 'Sarah Mitchell',
-    role: 'Homeowner',
-    avatarSrc: AVATAR_COLOR
+  { 
+    key: 'r4', 
+    name: 'Marrisa Chazan', 
+    photo: '/images/home/testimonials/marissa.png',  
+    quote: "MKPDesign helped me design and draw plans for a side return extension, and then they completed all the planning applications for me as well. Mustapha was incredibly friendly, polite and skilled - and always answered my many, many questions quickly and clearly. His ideas and knowledge were invaluable to the project and I would absolutely hire him again and recommend him highly." 
   },
-  {
-    id: '5',
-    quote:
-      'We appreciated the honest timelines and the care taken over finishes and light in every room.',
-    name: 'James Okonkwo',
-    role: 'Developer',
-    avatarSrc: AVATAR_DARK
+  { 
+    key: 'r5', 
+    name: 'Siruhe Hewaz',
+    photo: '/images/home/testimonials/sirushe_hewazy.png',
+    quote: "MKPDesign is a very professional company. They were always available when I had questions, prompt in their responses, and clear in their guidance. They added a lot of valuable input and experienced suggestions throughout the process, which made everything feel straightforward and well managed. I will definitely be using MKPDesign again in the future." 
   },
-  {
-    id: '6',
-    quote:
-      'Our extension finally matches how we use the house day to day — open, calm, and full of daylight.',
-    name: 'Emma Richardson',
-    role: 'Family client',
-    avatarSrc: AVATAR_COLOR
-  },
-  {
-    id: '7',
-    quote:
-      'Planning and neighbour concerns were handled thoughtfully; we felt supported at every stage.',
-    name: 'Daniel Hughes',
-    role: 'Terraced house owner',
-    avatarSrc: AVATAR_DARK
-  },
-  {
-    id: '8',
-    quote:
-      'The team listened properly and translated a vague brief into something we are proud to live in.',
-    name: 'Priya Nair',
-    role: 'First-time renovator',
-    avatarSrc: AVATAR_COLOR
-  },
-  {
-    id: '9',
-    quote:
-      'MKP translated a tricky brief into a calm, light-filled plan we still love living with every day.',
-    name: 'Oliver Grant',
-    role: 'Garden studio client',
-    avatarSrc: AVATAR_COLOR
-  },
-  {
-    id: '10',
-    quote:
-      'Clear fees, clear milestones, and a team that genuinely cared about the outcome on site.',
-    name: 'Hannah Wells',
-    role: 'Interior enthusiast',
-    avatarSrc: AVATAR_DARK
-  }
 ]
 
-function copyCard (t) {
-  return {
-    id: t.id,
-    quote: t.quote,
-    name: t.name,
-    role: t.role,
-    avatarSrc: t.avatarSrc
-  }
-}
+// ─── Desktop pagination ──────────────────────────────────────────────────────
+// Page 0: reviews 0,1,2  |  Page 1: reviews 3,4 + Google card
+// LAST_PAGE = 1 → next button disables, prev becomes active
 
-const featured = ref(copyCard(pool[0]))
-const small = ref([
-  copyCard(pool[1]),
-  copyCard(pool[2]),
-  copyCard(pool[3]),
-  copyCard(pool[4])
-])
+const desktopPages = [
+  [
+    { kind: 'review', key: 'r1', ...reviews[0] },
+    { kind: 'review', key: 'r2', ...reviews[1] },
+    { kind: 'review', key: 'r3', ...reviews[2] },
+  ],
+  [
+    { kind: 'review', key: 'r4', ...reviews[3] },
+    { kind: 'review', key: 'r5', ...reviews[4] },
+    { kind: 'google', key: 'google' },
+  ],
+]
 
-const queue = ref(pool.slice(5).map((t) => copyCard(t)))
-const discardStack = ref([])
+const LAST_PAGE  = desktopPages.length - 1   // 1
+const currentPage = ref(0)
+
+// ─── Mobile pagination ───────────────────────────────────────────────────────
+// 5 review slides + 1 Google slide = 6 total
+
+const MOBILE_TOTAL = reviews.length + 1   // 6
+const mobileIndex  = ref(0)
+
+// ─── Detect breakpoint ───────────────────────────────────────────────────────
 
 const isLg = ref(false)
-let mediaQueryList
-
-const mobileSlideIndex = ref(0)
-
-const mobileSmallCard = computed(() => {
-  const i = mobileSlideIndex.value - 1
-  return small.value[i] ?? small.value[0]
-})
-
-const canPrev = computed(() => {
-  if (isLg.value) {
-    return discardStack.value.length > 0
-  }
-  if (mobileSlideIndex.value > 0) {
-    return true
-  }
-  return discardStack.value.length > 0
-})
+let mq
 
 onMounted(() => {
-  mediaQueryList = window.matchMedia('(min-width: 1024px)')
-  isLg.value = mediaQueryList.matches
-  mediaQueryList.addEventListener('change', syncLg)
+  mq = window.matchMedia('(min-width: 1024px)')
+  isLg.value = mq.matches
+  mq.addEventListener('change', e => { isLg.value = e.matches })
 })
 
-onUnmounted(() => {
-  mediaQueryList?.removeEventListener('change', syncLg)
-})
+onUnmounted(() => mq?.removeEventListener('change', () => {}))
 
-function syncLg (e) {
-  isLg.value = e.matches
-  mobileSlideIndex.value = 0
-}
+// ─── Navigation ──────────────────────────────────────────────────────────────
 
-function onNextClick () {
+function goNext () {
   if (isLg.value) {
-    nextPage()
-    mobileSlideIndex.value = 0
-    return
-  }
-  if (mobileSlideIndex.value < 4) {
-    mobileSlideIndex.value++
+    if (currentPage.value < LAST_PAGE) currentPage.value++
   } else {
-    nextPage()
-    mobileSlideIndex.value = 0
+    if (mobileIndex.value < MOBILE_TOTAL - 1) mobileIndex.value++
   }
 }
 
-function onPrevClick () {
+function goPrev () {
   if (isLg.value) {
-    prevPage()
-    mobileSlideIndex.value = 0
-    return
+    if (currentPage.value > 0) currentPage.value--
+  } else {
+    if (mobileIndex.value > 0) mobileIndex.value--
   }
-  if (mobileSlideIndex.value > 0) {
-    mobileSlideIndex.value--
-    return
-  }
-  if (discardStack.value.length) {
-    prevPage()
-    mobileSlideIndex.value = 4
-  }
-}
-
-function takeFromQueue () {
-  if (!queue.value.length) {
-    queue.value = pool.map((t) => copyCard(t))
-  }
-  return queue.value.shift()
-}
-
-function nextPage () {
-  const f = { ...featured.value }
-  const s = small.value.map((x) => ({ ...x }))
-  discardStack.value.push({ ...s[3] })
-  const incoming = takeFromQueue()
-  featured.value = { ...s[2] }
-  small.value = [{ ...f }, { ...s[0] }, { ...s[1] }, { ...incoming }]
-  mobileSlideIndex.value = 0
-}
-
-function prevPage () {
-  if (!discardStack.value.length) {
-    return
-  }
-  const f = { ...featured.value }
-  const s = small.value.map((x) => ({ ...x }))
-  const tail = discardStack.value.pop()
-  queue.value.unshift({ ...s[3] })
-  featured.value = { ...s[0] }
-  small.value = [{ ...s[1] }, { ...s[2] }, { ...f }, { ...tail }]
-  mobileSlideIndex.value = 0
-}
-
-function smallCellClass (i) {
-  const map = [
-    'lg:col-start-2 lg:row-start-1',
-    'lg:col-start-2 lg:row-start-2',
-    'lg:col-start-3 lg:row-start-1',
-    'lg:col-start-3 lg:row-start-2'
-  ]
-  return map[i] || ''
 }
 </script>
