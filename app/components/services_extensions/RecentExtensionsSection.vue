@@ -9,7 +9,7 @@
       style="max-width: 1400px"
     >
       <!-- Header row -->
-      <div class="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between lg:gap-16">
+      <div class="flex flex-col gap-3">
         <h2
           id="recent-extensions-heading"
           class="shrink-0 font-abaya uppercase"
@@ -20,20 +20,18 @@
             color: #1a1a1a;
           "
         >
-          Our Recent <span style="color: #c9a96e">Extensions</span>
+          Our Recent <span style="color: #c9a96e">Projects</span>
         </h2>
         <p
-          class="font-poppins text-neutral-600 max-w-[480px]"
+          class="font-poppins text-neutral-600"
         >
-          With A Passion For Thoughtful Design And Meticulous Planning,
-          MKPDesign Transforms Ideas Into Functional, Beautiful Spaces
-          Tailored To Every Client's Lifestyle.
+          Beautifully considered extensions that don’t just add space, but transform how the whole home is experienced
         </p>
       </div>
 
       <!-- 3×2 Photo grid -->
       <div
-        class="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:mt-12 lg:grid-cols-3"
+        class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3"
       >
         <div
           v-for="i in 6"
@@ -58,11 +56,11 @@
 
 <script setup>
 const extensions = [
-  '/images/services/extension-1.png',
-  '/images/services/extension-2.png',
-  '/images/services/extension-3.png',
-  '/images/services/extension-4.png',
-  '/images/services/extension-5.png',
-  '/images/services/extension-6.png',
+  '/images/services/1.jpg',
+  '/images/services/2.png',
+  '/images/services/3.png',
+  '/images/services/4.png',
+  '/images/services/5.png',
+  '/images/services/6.png',
 ]
 </script>

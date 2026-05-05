@@ -61,13 +61,13 @@
 
       <!-- Two-column: images left, services list right -->
       <div
-        class="mt-12 grid gap-10 lg:mt-16 lg:grid-cols-2 lg:items-start lg:gap-14"
+        class="mt-12 grid gap-10 lg:mt-16 lg:grid-cols-2 lg:items-stretch lg:gap-14"
       >
         <!-- Left: Two side-by-side photos -->
-        <div class="flex gap-2.5" style="height: min(60vw, 480px)">
-          <div class="relative flex-1 overflow-hidden bg-neutral-800">
+        <div class="flex gap-2.5 h-[280px] sm:h-[340px] lg:h-full">
+          <div class="relative flex-1 overflow-hidden bg-neutral-800 h-full">
             <img
-              :src="extensionsImg1"
+              :src="transformImg1"
               width="600"
               height="800"
               class="absolute inset-0 h-full w-full object-cover"
@@ -76,9 +76,9 @@
               decoding="async"
             />
           </div>
-          <div class="relative overflow-hidden bg-neutral-800" style="width: 42%">
+          <div class="relative overflow-hidden bg-neutral-800 h-full" style="width: 42%">
             <img
-              :src="extensionsImg2"
+              :src="transformImg2"
               width="400"
               height="800"
               class="absolute inset-0 h-full w-full object-cover"
@@ -102,7 +102,7 @@
               {{ item.title }}
             </h3>
             <p
-              class="mt-2.5 font-poppins text-[#938F88]"
+              class="mt-2.5 font-poppins text-[#938F88] text-justify"
             >
               {{ item.body }}
             </p>
@@ -115,21 +115,21 @@
 
 <script setup>
 import { ArrowRight } from 'lucide-vue-next'
-const extensionsImg1 = '/images/services/transform-1.png';
-const extensionsImg2 = '/images/services/transform-2.png';
+const transformImg1 = '/images/services/transform-1.jpeg';
+const transformImg2 = '/images/services/transform-2.jpeg';
 
 const services = [
   {
-    title: 'Single-Storey Extensions',
-    body: 'Perfect for expanding your kitchen, creating open-plan living, or adding a bright new space on one level.'
+    title: 'SINGLE STOREY EXTENSIONS',
+    body: "The best way to create a space where the whole family comes together. When designed properly, this becomes the main living area of the home, somewhere people naturally spend most of their time. Connecting the extension to the garden is key. It not only improves natural light, but makes the space feel larger and more complete. This is often where the home truly starts to feel bigger."
   },
   {
-    title: 'Double-Storey Extensions',
-    body: 'Add extra bedrooms, bathrooms, and living areas upstairs to accommodate your family and increase your home\'s value.'
+    title: 'TWO STOREY EXTENSIONS',
+    body: "A straightforward way to add additional space across two levels. At its simplest, a two storey extension gives you extra rooms where you need them, often additional bedrooms, bathrooms, or expanded living areas. But where the real value comes in is when we use it as an opportunity to rethink the layout. If the budget allows, we can rework how the first floor functions, improving circulation, proportions, and how the spaces connect. The result isn’t just more space, but a home that feels more balanced, better planned, and easier to live in."
   },
   {
-    title: 'Rear & Side Extensions',
-    body: 'Make the most of your garden or side space with smart, modern extensions that enhance both function and style.'
+    title: 'LOFT CONVERSIONS',
+    body: "A smart way to create additional space using your existing footprint. A well designed loft conversion can give you an extra bedroom and ensuite without sacrificing garden space, making it one of the most efficient ways to expand your home. You also improve the roof at the same time, meaning you’re upgrading the property while adding usable space. Compared to other types of work, loft conversions are typically less disruptive."
   }
 ]
 </script>
