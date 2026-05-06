@@ -1,10 +1,10 @@
 <template>
   <main>
-    <HomeHeroSection />
-    <HomeAboutSection />
-    <HomeProcessSection />
-    <HomeTestimonialsSection />
-    <HomeFaqSection />
+    <HomeHero />
+    <HomeAbout />
+    <HomeProcess />
+    <HomeTestimonials />
+    <HomeFaq />
   </main>
 </template>
 

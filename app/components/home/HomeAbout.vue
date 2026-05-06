@@ -42,9 +42,9 @@
             We take on a limited number of projects to ensure each one receives the attention it deserves.
           </p>
           <div class="pt-1">
-            <MkpOutlinePillButton to="/contact" variant="onLight" class="font-abaya">
+            <CommonAppButton to="/contact" variant="onLight" class="font-abaya">
               Discuss Your Project
-            </MkpOutlinePillButton>
+            </CommonAppButton>
           </div>
         </div>
 

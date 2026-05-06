@@ -1,7 +1,7 @@
 <template>
   <main class="bg-[#f7f6f4]">
-    <ProjectsPageHero />
-    <ProjectsGridSection />
+    <ProjectsHero />
+    <ProjectsGrid />
   </main>
 </template>
 

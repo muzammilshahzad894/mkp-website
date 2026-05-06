@@ -132,10 +132,10 @@
         >
           Projects
         </NuxtLink>
-        <NuxtLink to="/blog" class="font-medium text-white/75 transition hover:text-white">
+        <NuxtLink to="#" class="font-medium text-white/75 transition hover:text-white">
           Blog
         </NuxtLink>
-        <NuxtLink to="/about" class="font-medium text-white/75 transition hover:text-white">
+        <NuxtLink to="#" class="font-medium text-white/75 transition hover:text-white">
           About
         </NuxtLink>
 
@@ -150,10 +150,10 @@
       </nav>
 
       <div class="shrink-0">
-        <MkpOutlinePillButton to="/contact">
+        <CommonAppButton to="/contact">
           <span class="font-abaya hidden sm:inline">Book an appointment</span>
           <span class="font-abaya sm:hidden">Book</span>
-        </MkpOutlinePillButton>
+        </CommonAppButton>
       </div>
     </div>
   </header>
@@ -166,36 +166,36 @@ const isHome        = computed(() => route.path === '/')
 const isProjects    = computed(() => route.path === '/projects' || route.path.startsWith('/projects/'))
 const isContact     = computed(() => route.path === '/contact')
 const isServicesNav = computed(
-  () => route.path === '/services_extensions' || route.path.startsWith('/services_extensions/')
+  () => route.path === '/services' || route.path.startsWith('/services/')
 )
 
 const activeCategory = ref('extensions')
 
 const categories = [
-  { key: 'extensions',  label: 'Extensions',  to: '/services_extensions' },
-  { key: 'conversions', label: 'Conversions', to: '#' },
-  { key: 'new-builds',  label: 'New Builds',  to: '#' },
-  { key: 'other',       label: 'Other',       to: '#' },
+  { key: 'extensions',  label: 'Extensions',  to: '/services' },
+  { key: 'conversions', label: 'Conversions', to: '/services' },
+  { key: 'new-builds',  label: 'New Builds',  to: '/services' },
+  { key: 'other',       label: 'Other',       to: '/services' },
 ]
 
 const subLinks = {
   extensions: [
-    { label: 'Rear & Side Extensions',   to: '/services_extensions' },
-    { label: 'Single-Storey Extensions', to: '/services_extensions' },
-    { label: 'Double-Storey Extensions', to: '/services_extensions' },
+    { label: 'Rear & Side Extensions',   to: '/services' },
+    { label: 'Single-Storey Extensions', to: '/services' },
+    { label: 'Double-Storey Extensions', to: '/services' },
   ],
   conversions: [
-    { label: 'Loft Conversions',         to: '#' },
-    { label: 'Garage Conversions',       to: '#' },
-    { label: 'Basement Conversions',     to: '#' },
+    { label: 'Loft Conversions',         to: '/services' },
+    { label: 'Garage Conversions',       to: '/services' },
+    { label: 'Basement Conversions',     to: '/services' },
   ],
   'new-builds': [
-    { label: 'Residential New Builds',   to: '#' },
-    { label: 'Custom Home Design',       to: '#' },
+    { label: 'Residential New Builds',   to: '/services' },
+    { label: 'Custom Home Design',       to: '/services' },
   ],
   other: [
-    { label: 'Planning & Compliance',    to: '#' },
-    { label: 'Interior Design',          to: '#' },
+    { label: 'Planning & Compliance',    to: '/services' },
+    { label: 'Interior Design',          to: '/services' },
   ],
 }
 

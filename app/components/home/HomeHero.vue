@@ -65,9 +65,9 @@
         </div>
       </div>
 
-      <MkpOutlinePillButton to="/contact" class="font-abaya">
+      <CommonAppButton to="/contact" class="font-abaya">
         Get in touch
-      </MkpOutlinePillButton>
+      </CommonAppButton>
     </div>
   </section>
 </template>
