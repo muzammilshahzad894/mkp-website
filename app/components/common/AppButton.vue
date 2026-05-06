@@ -44,7 +44,7 @@ const props = defineProps({
   variant: {
     type: String,
     default: 'onDark',
-    validator: (v) => ['onDark', 'onLight'].includes(v)
+    validator: (v) => ['onDark', 'onLight', 'darkSolid'].includes(v)
   }
 })
 
@@ -53,6 +53,9 @@ const btnClass = computed(() => {
     'inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-sans text-[11px] font-medium uppercase tracking-[0.18em] transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 sm:px-6 sm:text-xs'
   if (props.variant === 'onLight') {
     return `${base} border border-neutral-800/90 text-neutral-800 hover:bg-neutral-900/[0.04] focus-visible:outline-neutral-800/60`
+  }
+  if (props.variant === 'darkSolid') {
+    return `${base} bg-neutral-900 text-white hover:bg-neutral-600 focus-visible:outline-neutral-900`
   }
   return `${base} border border-white/90 text-white hover:bg-white/10 focus-visible:outline-white/80`
 })
