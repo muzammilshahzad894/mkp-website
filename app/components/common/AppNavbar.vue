@@ -34,7 +34,7 @@
         </NuxtLink>
 
         <!-- Services dropdown -->
-        <div class="group relative" @mouseenter="activeCategory = 'extensions'">
+        <div class="group relative" @mouseenter="activeService = 'extensions'">
           <button
             class="nav-item relative inline-flex items-center gap-1 px-1.5 py-0.5 font-medium transition hover:text-white text-[14px]"
             :class="isServicesNav ? 'text-white active-brackets' : 'text-white/75'"
@@ -54,54 +54,43 @@
 
           <!-- Dropdown panel: shifted left so cone aligns over "Services" -->
           <div
-            class="pointer-events-none invisible absolute top-full z-30 opacity-0 transition-all duration-150 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100"
-            style="left: -120px; padding-top: 15px; width: 750px;"
+            class="pointer-events-none invisible absolute top-full z-30 opacity-0 transition-all duration-150 group-hover:pointer-events-auto group-hover:visible group-hover:opacity-100 -left-[120px] pt-[15px] w-[750px]"
             role="region"
             aria-label="Services menu"
           >
             <!-- Cone: offset right to sit above "Services" trigger center -->
             <div
-              style="
-                position: absolute;
-                top: 7px;
-                left: 160px;
-                width: 0;
-                height: 0;
-                border-left: 8px solid transparent;
-                border-right: 8px solid transparent;
-                border-bottom: 8px solid #f0ebe0;
-              "
+              class="absolute top-[7px] left-[160px] w-0 h-0 border-l-[8px] border-r-[8px] border-b-[8px] border-l-transparent border-r-transparent border-b-[#f0ebe0]"
               aria-hidden="true"
             />
 
             <!-- Box: no corner brackets -->
             <div
-              class="bg-[#f0ebe0]"
-              style="box-shadow: 0 6px 32px rgba(0,0,0,0.16);"
+              class="bg-[#f0ebe0] shadow-[0_6px_32px_rgba(0,0,0,0.16)]"
             >
               <div class="flex items-stretch">
                 <!-- Left col -->
-                <div class="flex flex-col py-5" style="min-width: 260px;">
+                <div class="flex flex-col py-5 min-w-[260px]">
                   <NuxtLink
-                    v-for="cat in categories"
-                    :key="cat.key"
-                    :to="cat.to"
+                    v-for="ser in services"
+                    :key="ser.key"
+                    :to="ser.to"
                     class="flex w-full items-center justify-between px-6 py-[9px] text-left"
-                    @mouseenter="activeCategory = cat.key"
+                    @mouseenter="activeService = ser.key"
                   >
                     <span
                       class="font-abaya uppercase tracking-[0.13em] transition-colors text-[14px]"
-                      :class="activeCategory === cat.key
+                      :class="activeService === ser.key
                         ? 'text-[11px] font-bold text-[#8E8169]'
                         : 'text-[11px] font-normal text-[#BBB09D]'"
                     >
-                      {{ cat.label }}
+                      {{ ser.label }}
                     </span>
                     <span
                       class="ml-4 text-[20px] leading-none transition-colors"
-                      :class="activeCategory === cat.key ? 'text-[#8E8169]' : 'text-[#BBB09D]'"
+                      :class="activeService === ser.key ? 'text-[#8E8169]' : 'text-[#BBB09D]'"
                       aria-hidden="true"
-                    >{{ activeCategory === cat.key ? '↗' : '→' }}</span>
+                    >{{ activeService === ser.key ? '↗' : '→' }}</span>
                   </NuxtLink>
                 </div>
 
@@ -160,46 +149,20 @@
 </template>
 
 <script setup>
+import { services, servicesData } from '@/constants/navigation'
 const route = useRoute()
 
-const isHome        = computed(() => route.path === '/')
-const isProjects    = computed(() => route.path === '/projects' || route.path.startsWith('/projects/'))
-const isContact     = computed(() => route.path === '/contact')
-const isServicesNav = computed(
-  () => route.path === '/services' || route.path.startsWith('/services/')
-)
+const isRoute = (path) => route.path === path
+const isRouteGroup = (path) => route.path.startsWith(path)
 
-const activeCategory = ref('extensions')
+const isHome = computed(() => isRoute('/'))
+const isProjects = computed(() => isRouteGroup('/projects'))
+const isContact = computed(() => isRoute('/contact'))
+const isServicesNav = computed(() => isRouteGroup('/services'))
 
-const categories = [
-  { key: 'extensions',  label: 'Extensions',  to: '/services' },
-  { key: 'conversions', label: 'Conversions', to: '/services' },
-  { key: 'new-builds',  label: 'New Builds',  to: '/services' },
-  { key: 'other',       label: 'Other',       to: '/services' },
-]
+const activeService = ref('extensions')
 
-const subLinks = {
-  extensions: [
-    { label: 'Rear & Side Extensions',   to: '/services' },
-    { label: 'Single-Storey Extensions', to: '/services' },
-    { label: 'Double-Storey Extensions', to: '/services' },
-  ],
-  conversions: [
-    { label: 'Loft Conversions',         to: '/services' },
-    { label: 'Garage Conversions',       to: '/services' },
-    { label: 'Basement Conversions',     to: '/services' },
-  ],
-  'new-builds': [
-    { label: 'Residential New Builds',   to: '/services' },
-    { label: 'Custom Home Design',       to: '/services' },
-  ],
-  other: [
-    { label: 'Planning & Compliance',    to: '/services' },
-    { label: 'Interior Design',          to: '/services' },
-  ],
-}
-
-const activeLinks = computed(() => subLinks[activeCategory.value] ?? [])
+const activeLinks = computed(() => servicesData[activeService.value] ?? [])
 </script>
 
 <style scoped>

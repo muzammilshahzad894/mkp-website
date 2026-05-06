@@ -14,14 +14,12 @@
 
         <!-- Uniform light overlay across full image -->
         <div
-          class="absolute inset-0"
-          style="background: rgba(0,0,0,0.38);"
+          class="absolute inset-0 bg-black/40"
           role="presentation"
         />
         <!-- Bottom fade into footer -->
         <div
-          class="pointer-events-none absolute inset-x-0 bottom-0"
-          style="height: min(52%,360px); background: linear-gradient(to bottom, transparent 0%, rgba(27,27,27,0.6) 60%, #1B1B1B 100%);"
+          class="pointer-events-none absolute inset-x-0 bottom-0 fade-effect"
           role="presentation"
         />
 
@@ -37,8 +35,7 @@
               <!-- CHANGE 2: Heading size reduced — was 58px/64px, now 42px/46px -->
               <h2
                 id="footer-cta-heading"
-                class="font-abaya whitespace-nowrap text-center font-abhaya font-bold uppercase leading-[1.2] tracking-normal text-white"
-                style="font-size: clamp(1.3rem, calc(0.6rem + 2.8vw), 2.4rem);"
+                class="font-abaya whitespace-nowrap text-center font-abhaya font-bold uppercase leading-[1.2] tracking-normal text-white text-[clamp(1.3rem,2.8vw,2.4rem)]"
               >
                 Ready to transform your home?
               </h2>
@@ -99,22 +96,21 @@
             class="flex min-w-0 flex-col gap-10 font-poppins lg:ml-auto"
           >
             <div
-              class="grid w-full grid-cols-1 gap-10 sm:grid-cols-3 sm:items-stretch sm:gap-0"
-              style="column-gap: clamp(40px, 4vw, 72px);"
+              class="grid w-full grid-cols-1 gap-10 sm:grid-cols-3 sm:items-stretch sm:gap-0 gap-x-12 lg:gap-x-16"
             >
               <nav
-                v-for="block in linkBlocks"
-                :key="block.aria"
+                v-for="navigation in footerNavigation"
+                :key="navigation.aria"
                 class="relative flex flex-col border-l border-[#3d3d3d] pl-6 sm:pl-7 md:pl-8 lg:pl-9 xl:pl-10"
-                :aria-label="block.aria"
+                :aria-label="navigation.aria"
               >
                 <p
                   class="font-poppins text-[13px] font-semibold uppercase leading-[1.5] tracking-[0.12em] text-[#938F88]"
                 >
-                  {{ block.title }}
+                  {{ navigation.title }}
                 </p>
                 <ul class="mt-6 flex flex-1 flex-col space-y-3 sm:mt-7">
-                  <li v-for="item in block.items" :key="item.to + item.label">
+                  <li v-for="item in navigation.items" :key="item.to + item.label">
                     <NuxtLink
                       :to="item.to"
                       class="font-poppins text-[14px] font-normal capitalize leading-[1.5] tracking-normal text-[#DADADA] transition hover:text-white"
@@ -173,9 +169,16 @@ const otherLinks = [
   { label: 'Contact Us', to: '/contact' }
 ]
 
-const linkBlocks = [
+const footerNavigation = [
   { aria: 'Quick links', title: 'Quick links', items: quickLinks },
   { aria: 'Specializations', title: 'Specialize', items: specializeLinks },
   { aria: 'More', title: 'Others', items: otherLinks }
 ]
 </script>
+
+<style scoped>
+  .fade-effect {
+    height: min(52%,360px);
+    background: linear-gradient(to bottom, transparent 0%, rgba(27,27,27,0.6) 60%, #1B1B1B 100%);
+  }
+</style>
