@@ -5,7 +5,10 @@
     :class="btnClass"
   >
     <span><slot /></span>
-    <ArrowRight class="w-6 h-4" />
+    <ArrowRight
+      v-if="withArrow"
+     class="w-6 h-4"
+    />
   </NuxtLink>
   <a
     v-else-if="href"
@@ -13,7 +16,10 @@
     :class="btnClass"
   >
     <span><slot /></span>
-    <ArrowRight class="w-6 h-4" />
+    <ArrowRight
+      v-if="withArrow"
+      class="w-6 h-4"
+    />
   </a>
   <button
     v-else
@@ -21,7 +27,10 @@
     :class="btnClass"
   >
     <span><slot /></span>
-    <ArrowRight class="w-6 h-4" />
+    <ArrowRight
+      v-if="withArrow"
+      class="w-6 h-4"
+    />
   </button>
 </template>
 
@@ -45,7 +54,11 @@ const props = defineProps({
     type: String,
     default: 'onDark',
     validator: (v) => ['onDark', 'onLight', 'darkSolid'].includes(v)
-  }
+  },
+  withArrow: {
+    type: Boolean,
+    default: true
+  },
 })
 
 const btnClass = computed(() => {
