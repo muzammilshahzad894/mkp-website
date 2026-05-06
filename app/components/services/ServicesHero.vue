@@ -21,8 +21,6 @@
       role="presentation"
     />
 
-    <LayoutAppNavbar />
-
     <!-- Content: heading bottom-left, buttons bottom-right -->
     <div
       class="relative z-10 mx-auto flex w-full flex-col justify-end px-8 pb-14 pt-32 sm:px-10 lg:px-16 max-w-[min(100%,85vw,1400px)] min-h-[min(100svh,900px)]"

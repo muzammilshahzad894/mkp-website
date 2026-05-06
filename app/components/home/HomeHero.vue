@@ -27,8 +27,6 @@
       role="presentation"
     />
 
-    <LayoutAppNavbar />
-
     <div
       class="relative z-10 flex min-h-screen -translate-y-6 flex-col items-center justify-center px-6 pb-16 pt-32 text-center sm:px-10 sm:pb-20 sm:pt-36"
     >

@@ -10,8 +10,6 @@
       role="presentation"
     />
 
-    <LayoutAppNavbar />
-
     <!-- Content pinned to bottom -->
     <div class="relative z-10 flex min-h-screen flex-col justify-end pb-8 sm:pb-12 md:pb-16">
       <div class="mx-auto w-full px-5 sm:px-8 md:px-10 max-w-[min(100%,85vw,1400px)]">

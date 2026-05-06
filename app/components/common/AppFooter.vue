@@ -133,7 +133,7 @@
         >
           <p>© {{ year }} MKPDesign All Rights Reserved</p>
           <NuxtLink
-            to="/terms"
+            to="#"
             class="text-white"
           >
             Terms &amp; Conditions
@@ -152,24 +152,24 @@ const year = new Date().getFullYear()
 
 const quickLinks = [
   { label: 'Home', to: '/' },
-  { label: 'About Us', to: '/about' },
+  { label: 'About Us', to: '#' },
   { label: 'Portfolio', to: '/projects' },
-  { label: 'Our Process', to: '/#process-heading' },
-  { label: 'Testimonials', to: '/#testimonials-heading' },
-  { label: 'Locations', to: '/locations' }
+  { label: 'Our Process', to: '#' },
+  { label: 'Testimonials', to: '#' },
+  { label: 'Locations', to: '#' }
 ]
 
 const specializeLinks = [
-  { label: 'Extensions', to: '/services/extensions' },
-  { label: 'Conversions', to: '/services/conversions' },
-  { label: 'New Builds', to: '/services/new-builds' },
-  { label: 'Planning & Compliance', to: '/services/planning' }
+  { label: 'Extensions', to: '/services' },
+  { label: 'Conversions', to: '/services' },
+  { label: 'New Builds', to: '/services' },
+  { label: 'Planning & Compliance', to: '/services' }
 ]
 
 const otherLinks = [
-  { label: 'Blog', to: '/blog' },
-  { label: 'FAQs', to: '/#faq-heading' },
-  { label: 'Guides & Tips', to: '/guides' },
+  { label: 'Blog', to: '#' },
+  { label: 'FAQs', to: '#' },
+  { label: 'Guides & Tips', to: '#' },
   { label: 'Contact Us', to: '/contact' }
 ]
 

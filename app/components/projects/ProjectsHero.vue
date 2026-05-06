@@ -13,8 +13,6 @@
       role="presentation"
     />
 
-    <LayoutAppNavbar />
-
     <div
       class="relative z-10 mx-auto flex min-h-[min(100dvh,880px)] w-full max-w-[min(100%,88vw,1320px)] flex-col justify-end px-4 pb-6 pt-32 sm:px-6 sm:pb-8 md:pb-10 lg:px-8"
     >
