@@ -124,7 +124,7 @@
         <NuxtLink to="/blogs" class="font-medium text-white/75 transition hover:text-white">
           Blog
         </NuxtLink>
-        <NuxtLink to="#" class="font-medium text-white/75 transition hover:text-white">
+        <NuxtLink to="/about" class="font-medium text-white/75 transition hover:text-white">
           About
         </NuxtLink>
 
