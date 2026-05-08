@@ -51,7 +51,6 @@
             @click="activeIndex = index"
           >
             <!-- Filled pin for active, outline pin for inactive -->
-            <MapPinned class="w-5 h-5 text-neutral-700" />
             <svg
               v-if="index === activeIndex"
               class="shrink-0 w-4 h-4"
@@ -94,9 +93,9 @@
           </div>
         </div>
       </div>
+      <CommonPartnerSlide />
     </div>
 
-    <CommonPartnerSlide />
   </section>
 </template>
 
