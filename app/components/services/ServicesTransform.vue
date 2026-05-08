@@ -66,7 +66,7 @@
         <!-- Left: Two side-by-side photos -->
         <div class="flex gap-2.5 h-[280px] sm:h-[340px] lg:h-full">
           <div class="relative flex-1 overflow-hidden bg-neutral-800 h-full">
-            <img
+            <NuxtImg
               :src="transformImg1"
               width="600"
               height="800"
@@ -77,7 +77,7 @@
             />
           </div>
           <div class="relative overflow-hidden bg-neutral-800 h-full" style="width: 42%">
-            <img
+            <NuxtImg
               :src="transformImg2"
               width="400"
               height="800"

@@ -9,7 +9,7 @@
       <div
         class="overflow-hidden border border-solid border-white bg-white shadow-[0_1px_3px_rgba(0,0,0,0.06)]"
       >
-        <img
+        <NuxtImg
           src="/images/contact/map-section.png"
           width="1400"
           height="700"

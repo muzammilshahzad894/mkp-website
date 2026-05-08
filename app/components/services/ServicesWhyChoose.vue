@@ -55,7 +55,7 @@
           class="relative w-full overflow-hidden bg-neutral-200"
           style="aspect-ratio: 4/3; min-height: 280px"
         >
-          <img
+          <NuxtImg
             :src="chooseUsImg"
             width="900"
             height="700"

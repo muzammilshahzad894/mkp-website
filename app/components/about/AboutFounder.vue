@@ -6,11 +6,13 @@
 
         <!-- Image -->
         <div class="overflow-hidden">
-          <img
+          <NuxtImg
             :src="founderImage"
             alt="Mustapha Kerkoud"
             class="h-[360px] w-full object-cover object-top sm:h-[400px] md:h-[440px]"
-          >
+            loading="lazy"
+            decoding="async"
+          />
         </div>
 
         <!-- Content -->

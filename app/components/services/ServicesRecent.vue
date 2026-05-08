@@ -39,7 +39,7 @@
           class="relative overflow-hidden bg-neutral-200"
           style="aspect-ratio: 4/3"
         >
-          <img
+          <NuxtImg
             :src="extensions[i - 1]"
             width="800"
             height="600"

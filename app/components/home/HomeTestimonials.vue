@@ -70,7 +70,7 @@
               <!-- Review card -->
               <template v-if="cell.kind === 'review'">
                 <div class="mt-5 flex justify-center">
-                  <img
+                  <NuxtImg
                     :src="cell.photo"
                     alt=""
                     class="h-20 w-20 rounded-full object-cover ring-1 ring-black/5"
@@ -136,7 +136,7 @@
               </p>
               <div class="mt-2 h-px w-full bg-neutral-900" aria-hidden="true" />
               <div class="mt-5 flex justify-center">
-                <img
+                <NuxtImg
                   :src="review.photo"
                   alt=""
                   class="h-20 w-20 rounded-full object-cover ring-1 ring-black/5"

@@ -6,11 +6,13 @@
       <div class="grid grid-cols-1 gap-12 md:grid-cols-2 md:items-center xl:gap-20">
         <!-- Image -->
         <div class="overflow-hidden">
-          <img
+          <NuxtImg
             :src="whyChooseImg1"
             alt="Modern architecture interior"
             class="h-[320px] w-full object-cover sm:h-[380px] md:h-[500px]"
-          >
+            loading="lazy"
+            decoding="async"
+          />
         </div>
 
         <!-- Text -->
@@ -51,11 +53,13 @@
 
         <!-- Image -->
         <div class="overflow-hidden">
-          <img
+          <NuxtImg
             :src="whyChooseImg2"
             alt="Modern kitchen interior"
             class="h-[320px] w-full object-cover sm:h-[380px] md:h-[500px]"
-          >
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </div>
 

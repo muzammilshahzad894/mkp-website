@@ -22,10 +22,12 @@
 
         <!-- Map area -->
         <div class="flex-1 relative overflow-hidden min-h-[320px] md:min-h-0">
-          <img
+          <NuxtImg
             :src="mapImage"
             alt="Map of service area"
             class="absolute inset-0 w-full h-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </div>
 

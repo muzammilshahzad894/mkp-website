@@ -16,11 +16,13 @@
               class="overflow-hidden w-full md:w-[80%]"
               :class="index % 2 === 0 ? 'md:ml-0' : 'md:ml-auto'"
             >
-              <img
+              <NuxtImg
                 :src="post.image"
                 :alt="post.title"
                 class="h-[240px] w-full object-cover sm:h-[280px] md:h-[300px]"
-              >
+                loading="lazy"
+                decoding="async"
+              />
             </div>
 
             <!-- Content -->
