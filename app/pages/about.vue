@@ -6,6 +6,7 @@
     <AboutWhyChoose />
     <AboutFounder />
     <AboutWorkArea />
+    
   </main>
 </template>
 
