@@ -7,7 +7,7 @@
         id="about-heading"
         class="font-abaya text-3xl font-normal tracking-[0.02em] text-[#c4b59a] sm:text-4xl md:text-[2.35rem]"
       >
-        MKP Design
+        MKPDesign
       </h2>
       <div class="mt-3 h-px w-full bg-neutral-200" aria-hidden="true" />
 
