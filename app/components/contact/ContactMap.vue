@@ -9,15 +9,16 @@
       <div
         class="overflow-hidden border border-solid border-white bg-white shadow-[0_1px_3px_rgba(0,0,0,0.06)]"
       >
-        <NuxtImg
-          src="/images/contact/map-section.png"
-          width="1400"
-          height="700"
-          class="h-auto w-full object-cover object-center"
-          alt="Map showing our service area with a marker for Croydon"
-          loading="lazy"
-          decoding="async"
-        />
+        <div class="overflow-hidden border bg-white h-[450px]">
+          <iframe
+            class="w-full h-full border-0"
+            loading="lazy"
+            decoding="async"
+            allowfullscreen
+            src="https://www.google.com/maps?q=Croydon&output=embed"
+            alt="Map showing our service area with a marker for Croydon"
+          ></iframe>
+        </div>
       </div>
     </div>
   </section>

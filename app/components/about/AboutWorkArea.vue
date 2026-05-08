@@ -1,7 +1,7 @@
 <template>
   <section class="bg-white pt-10 pb-20">
     <div
-      class="mx-auto w-full max-w-[min(100%,85vw,1400px)] px-5 sm:px-8 md:px-10"
+      class="mx-auto w-full max-w-[min(100%,85vw,1400px)] px-5 sm:px-8 md:px-15"
     >
       <!-- Heading -->
       <div class="mb-8">
@@ -26,14 +26,15 @@
         class="flex flex-col md:flex-row gap-4 overflow-hidden"
       >
         <!-- Map area -->
+
         <div class="flex-1 relative overflow-hidden min-h-[320px] md:min-h-0">
-          <NuxtImg
-            :src="mapImage"
-            alt="Map of service area"
-            class="absolute inset-0 w-full h-full object-cover"
+          <iframe
+            class="absolute inset-0 w-full h-full border-0"
             loading="lazy"
-            decoding="async"
-          />
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade"
+            :src="`https://www.google.com/maps?q=${areas[activeIndex]}&output=embed`"
+          ></iframe>
         </div>
 
         <!-- Service list panel: transparent bg, items handle their own look -->
@@ -95,7 +96,7 @@
       </div>
     </div>
 
-    <CommonPartnerSlide  />
+    <CommonPartnerSlide />
   </section>
 </template>
 

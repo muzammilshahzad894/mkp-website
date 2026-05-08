@@ -46,7 +46,7 @@
             class="font-dm text-4xl uppercase tracking-[0.05em] sm:text-4xl md:text-5xl lg:text-6xl -mt-3"
             style="text-shadow: 0 2px 24px rgba(0,0,0,0.75), 0 1px 6px rgba(0,0,0,0.9);"
           >
-            MKP Design
+            MKPDesign
           </h1>
           <p
             class="font-dm tracking-[0.03em] text-white/95 sm:text-xl md:text-2xl"

@@ -9,7 +9,7 @@
           :key="index"
           class="flex shrink-0 items-center justify-center px-8"
         >
-          <img
+          <NuxtImg
             :src="p.src"
             :alt="p.alt"
             class="h-12 w-auto max-w-[220px] object-contain sm:h-12 lg:h-14"
