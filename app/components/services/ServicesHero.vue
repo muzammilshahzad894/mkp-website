@@ -10,14 +10,7 @@
       role="presentation"
     />
     <div
-      class="absolute inset-0 z-10"
-      style="background: linear-gradient(
-        to bottom,
-        rgba(0,0,0,0.20) 0%,
-        rgba(0,0,0,0.35) 40%,
-        rgba(0,0,0,0.40) 70%,
-        rgba(0,0,0,0.25) 100%
-      );"
+      class="absolute inset-0 z-10 hero-overlay"
       role="presentation"
     />
 
