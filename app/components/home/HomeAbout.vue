@@ -39,14 +39,14 @@
             that bring people together. Clean, minimal forms that feel
             intentional, not forced
           </p>
-          <p>
+          <p class="text-justify">
             We don’t say yes to everything either. If something doesn’t work,
             we’ll tell you and explain why. Because getting it right matters
             more than just getting it done. This is why our projects feel
             different. You can feel it the moment you walk in. Not because it’s
             overdesigned, but because everything makes sense.
           </p>
-          <p>
+          <p class="text-justify">
             We take on a limited number of projects to ensure each one receives
             the attention it deserves.
           </p>

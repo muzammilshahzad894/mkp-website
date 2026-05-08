@@ -190,14 +190,16 @@
 
         <NuxtLink
           to="/blogs"
-          class="font-medium text-white/75 transition hover:text-white"
+          class="nav-item relative px-1.5 py-0.5 font-medium transition hover:text-white text-[14px]"
+          :class="isBlog ? 'text-white active-brackets' : 'text-white/75'"
         >
           Blog
         </NuxtLink>
 
         <NuxtLink
           to="/about"
-          class="font-medium text-white/75 transition hover:text-white"
+          class="nav-item relative px-1.5 py-0.5 font-medium transition hover:text-white text-[14px]"
+          :class="isAbout ? 'text-white active-brackets' : 'text-white/75'"
         >
           About
         </NuxtLink>
@@ -310,7 +312,8 @@
           <!-- Blog -->
           <NuxtLink
             to="/blogs"
-            class="font-abaya uppercase tracking-[0.16em] text-[13px] px-1.5 py-2.5 text-white/75 transition hover:text-white"
+           class="font-abaya uppercase tracking-[0.16em] text-[13px] px-1.5 py-2.5 transition"
+           :class="isBlog ? 'text-white' : 'text-white/75'"
             @click="mobileOpen = false"
           >
             Blog
@@ -319,7 +322,8 @@
           <!-- About -->
           <NuxtLink
             to="/about"
-            class="font-abaya uppercase tracking-[0.16em] text-[13px] px-1.5 py-2.5 text-white/75 transition hover:text-white"
+            class="font-abaya uppercase tracking-[0.16em] text-[13px] px-1.5 py-2.5 transition"
+            :class="isAbout ? 'text-white' : 'text-white/75'"
             @click="mobileOpen = false"
           >
             About
@@ -353,6 +357,8 @@ const isHome = computed(() => isRoute("/"));
 const isProjects = computed(() => isRouteGroup("/projects"));
 const isContact = computed(() => isRoute("/contact"));
 const isServicesNav = computed(() => isRouteGroup("/services"));
+const isAbout = computed(() => isRoute('/about'))
+const isBlog  = computed(() => isRouteGroup('/blogs'))
 
 const activeService = ref("extensions");
 

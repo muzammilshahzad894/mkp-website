@@ -38,7 +38,7 @@
             {{ step.title }}
           </h3>
           <p
-            class="mt-4 text-[14px] font-poppins leading-[1.75] text-neutral-400 sm:text-[15px]"
+            class="mt-4 text-[14px] font-poppins leading-[1.75] text-neutral-400 sm:text-[15px] text-justify"
           >
             {{ step.body }}
           </p>
