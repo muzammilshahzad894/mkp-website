@@ -63,8 +63,8 @@
           <NuxtImg
             :src="aboutImage"
             width="900"
-            height="700"
-            class="block h-full w-full object-cover lg:absolute lg:inset-0 lg:min-h-0"
+            height="800"
+            class="block h-full w-full object-contain lg:absolute lg:inset-0 lg:min-h-0"
             alt="Contemporary white home with dark window frames and brick driveway"
             loading="lazy"
             decoding="async"

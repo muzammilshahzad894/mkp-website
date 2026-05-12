@@ -49,7 +49,7 @@
 
       <div class="flex items-center justify-end">
         <CommonAppButton to="/contact">
-          <span class="font-abaya">Book</span>
+          <span class="font-abaya">Discuss </span>
         </CommonAppButton>
       </div>
     </div>
@@ -216,8 +216,8 @@
       <!-- Desktop Nav Links -->
       <div class="shrink-0">
         <CommonAppButton to="/contact">
-          <span class="font-abaya hidden sm:inline">Book an appointment</span>
-          <span class="font-abaya sm:hidden">Book</span>
+          <span class="font-abaya hidden sm:inline">Discuss Your Project</span>
+          <span class="font-abaya sm:hidden">Discuss</span>
         </CommonAppButton>
       </div>
     </div>
@@ -312,8 +312,8 @@
           <!-- Blog -->
           <NuxtLink
             to="/blogs"
-           class="font-abaya uppercase tracking-[0.16em] text-[13px] px-1.5 py-2.5 transition"
-           :class="isBlog ? 'text-white' : 'text-white/75'"
+            class="font-abaya uppercase tracking-[0.16em] text-[13px] px-1.5 py-2.5 transition"
+            :class="isBlog ? 'text-white' : 'text-white/75'"
             @click="mobileOpen = false"
           >
             Blog
@@ -357,8 +357,8 @@ const isHome = computed(() => isRoute("/"));
 const isProjects = computed(() => isRouteGroup("/projects"));
 const isContact = computed(() => isRoute("/contact"));
 const isServicesNav = computed(() => isRouteGroup("/services"));
-const isAbout = computed(() => isRoute('/about'))
-const isBlog  = computed(() => isRouteGroup('/blogs'))
+const isAbout = computed(() => isRoute("/about"));
+const isBlog = computed(() => isRouteGroup("/blogs"));
 
 const activeService = ref("extensions");
 

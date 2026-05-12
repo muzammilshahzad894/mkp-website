@@ -12,7 +12,7 @@
       <!-- Section header -->
       <div
         class="flex flex-col gap-6 pb-10 sm:pb-12 lg:flex-row lg:items-end lg:justify-between lg:gap-10"
-        style="border-bottom: 1px solid rgba(255,255,255,0.1)"
+        style="border-bottom: 1px solid rgba(255, 255, 255, 0.1)"
       >
         <div>
           <h2
@@ -29,14 +29,10 @@
           </h2>
           <p
             class="mt-3 font-poppins text-[#938F88] text-[14px]"
-            style="
-              line-height: 1.75;
-              max-width: 600px;
-              letter-spacing: 0.01em;
-            "
+            style="line-height: 1.75; max-width: 600px; letter-spacing: 0.01em"
           >
-            We Design And Plan Stunning Extensions That Add Space, Light,
-            And Value To Your Property All Tailored To Your Lifestyle.
+            We Design And Plan Stunning Extensions That Add Space, Light, And
+            Value To Your Property All Tailored To Your Lifestyle.
           </p>
         </div>
 
@@ -50,7 +46,7 @@
               padding: 0 24px;
               font-size: 10.5px;
               letter-spacing: 0.15em;
-              border: 1px solid rgba(255,255,255,0.6);
+              border: 1px solid rgba(255, 255, 255, 0.6);
             "
           >
             Book An Appointment
@@ -64,27 +60,19 @@
         class="mt-12 grid gap-10 lg:mt-16 lg:grid-cols-2 lg:items-stretch lg:gap-14"
       >
         <!-- Left: Two side-by-side photos -->
+
         <div class="flex gap-2.5 h-[280px] sm:h-[340px] lg:h-full">
           <div class="relative flex-1 overflow-hidden bg-neutral-800 h-full">
             <NuxtImg
               :src="transformImg1"
-              width="600"
-              height="800"
               class="absolute inset-0 h-full w-full object-cover"
-              alt=""
-              loading="lazy"
-              decoding="async"
             />
           </div>
-          <div class="relative overflow-hidden bg-neutral-800 h-full" style="width: 42%">
+
+          <div class="relative flex-1 overflow-hidden bg-neutral-800 h-full">
             <NuxtImg
               :src="transformImg2"
-              width="400"
-              height="800"
               class="absolute inset-0 h-full w-full object-cover"
-              alt=""
-              loading="lazy"
-              decoding="async"
             />
           </div>
         </div>
@@ -94,16 +82,11 @@
           <li v-for="item in services" :key="item.title">
             <h3
               class="font-abaya uppercase text-[#c9a96e] text-[18px]"
-              style="
-                letter-spacing: 0.14em;
-                line-height: 1.3;
-              "
+              style="letter-spacing: 0.14em; line-height: 1.3"
             >
               {{ item.title }}
             </h3>
-            <p
-              class="mt-2.5 font-poppins text-[#938F88] text-justify"
-            >
+            <p class="mt-2.5 font-poppins text-[#938F88] text-justify">
               {{ item.body }}
             </p>
           </li>
@@ -114,22 +97,22 @@
 </template>
 
 <script setup>
-import { ArrowRight } from 'lucide-vue-next'
-const transformImg1 = '/images/services/transform-1.jpeg';
-const transformImg2 = '/images/services/transform-2.jpeg';
+import { ArrowRight } from "lucide-vue-next";
+const transformImg1 = "/images/services/transform-1.jpeg";
+const transformImg2 = "/images/services/transform-2.jpeg";
 
 const services = [
   {
-    title: 'SINGLE STOREY EXTENSIONS',
-    body: "The best way to create a space where the whole family comes together. When designed properly, this becomes the main living area of the home, somewhere people naturally spend most of their time. Connecting the extension to the garden is key. It not only improves natural light, but makes the space feel larger and more complete. This is often where the home truly starts to feel bigger."
+    title: "SINGLE STOREY EXTENSIONS",
+    body: "The best way to create a space where the whole family comes together. When designed properly, this becomes the main living area of the home, somewhere people naturally spend most of their time. Connecting the extension to the garden is key. It not only improves natural light, but makes the space feel larger and more complete. This is often where the home truly starts to feel bigger.",
   },
   {
-    title: 'TWO STOREY EXTENSIONS',
-    body: "A straightforward way to add additional space across two levels. At its simplest, a two storey extension gives you extra rooms where you need them, often additional bedrooms, bathrooms, or expanded living areas. But where the real value comes in is when we use it as an opportunity to rethink the layout. If the budget allows, we can rework how the first floor functions, improving circulation, proportions, and how the spaces connect. The result isn’t just more space, but a home that feels more balanced, better planned, and easier to live in."
+    title: "TWO STOREY EXTENSIONS",
+    body: "A straightforward way to add additional space across two levels. At its simplest, a two storey extension gives you extra rooms where you need them, often additional bedrooms, bathrooms, or expanded living areas. But where the real value comes in is when we use it as an opportunity to rethink the layout. If the budget allows, we can rework how the first floor functions, improving circulation, proportions, and how the spaces connect. The result isn’t just more space, but a home that feels more balanced, better planned, and easier to live in.",
   },
   {
-    title: 'LOFT CONVERSIONS',
-    body: "A smart way to create additional space using your existing footprint. A well designed loft conversion can give you an extra bedroom and ensuite without sacrificing garden space, making it one of the most efficient ways to expand your home. You also improve the roof at the same time, meaning you’re upgrading the property while adding usable space. Compared to other types of work, loft conversions are typically less disruptive."
-  }
-]
+    title: "LOFT CONVERSIONS",
+    body: "A smart way to create additional space using your existing footprint. A well designed loft conversion can give you an extra bedroom and ensuite without sacrificing garden space, making it one of the most efficient ways to expand your home. You also improve the roof at the same time, meaning you’re upgrading the property while adding usable space. Compared to other types of work, loft conversions are typically less disruptive.",
+  },
+];
 </script>
