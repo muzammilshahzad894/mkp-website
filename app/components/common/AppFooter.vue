@@ -140,7 +140,7 @@
 
 <script setup>
 import { ArrowRight } from "lucide-vue-next";
-const footerBgImage = "/images/footer/foot.jpeg";
+const footerBgImage = "/images/footer/footer.jpeg";
 
 const year = new Date().getFullYear();
 
