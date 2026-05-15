@@ -39,7 +39,7 @@
               <!-- Meta -->
               <div>
                 <p
-                  class="mb-4 font-poppins text-[11px] tracking-[0.18em] text-neutral-500"
+                  class="mb-4 font-poppins-blog text-[11px] tracking-[0.18em] text-neutral-500"
                 >
                   {{ post.date }}&nbsp;–&nbsp;{{ post.category }}
                 </p>
