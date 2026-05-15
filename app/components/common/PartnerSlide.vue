@@ -164,7 +164,7 @@ const partners = [
 .partner-track {
   display: flex;
   width: max-content;
-  animation: scrollPartners 40s linear infinite;
+  animation: scrollPartners 80s linear infinite;
 }
 
 @keyframes scrollPartners {

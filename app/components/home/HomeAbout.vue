@@ -58,7 +58,7 @@
         </div>
 
         <div
-          class="relative min-h-[260px] w-full overflow-hidden sm:min-h-[300px] lg:min-h-full"
+          class="relative min-h-[260px] w-full overflow-hidden sm:min-h-[300px] lg:min-h-full mt-[-25px]"
         >
           <NuxtImg
             :src="aboutImage"
