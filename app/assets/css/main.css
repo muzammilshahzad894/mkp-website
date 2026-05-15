@@ -1,19 +1,29 @@
 .font-abaya {
-  font-family: 'Abhaya Libre', serif;
+  font-family: "Abhaya Libre", serif;
 }
 
 .font-dm {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
+}
+
+.font-poppins-blog {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: medium;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
 }
 
 .font-poppins {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-
 .hero-overlay {
-  background: linear-gradient(to bottom,
-    rgba(0,0,0,0.20) 0%,
-    rgba(0,0,0,0.35) 40%,
-    rgba(0,0,0,0.40) 70%,
-    rgba(0,0,0,0.25) 100%);
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.35) 40%,
+    rgba(0, 0, 0, 0.4) 70%,
+    rgba(0, 0, 0, 0.25) 100%
+  );
 }
