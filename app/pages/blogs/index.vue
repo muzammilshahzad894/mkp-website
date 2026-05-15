@@ -7,6 +7,6 @@
 
 <script setup>
 useHead({
-  title: 'MKP Design — Blog'
+  title: 'MKP Design — Blog',
 })
 </script>

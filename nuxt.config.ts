@@ -1,9 +1,29 @@
+const apiBaseUrl = process.env.NUXT_PUBLIC_API_BASE_URL || 'http://127.0.0.1:8000'
+
+function apiImageHostname(): string {
+  try {
+    return new URL(apiBaseUrl).hostname
+  } catch {
+    return '127.0.0.1'
+  }
+}
+
 export default defineNuxtConfig({
   srcDir: 'app',
   pages: true,
 
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
+
+  runtimeConfig: {
+    public: {
+      apiBaseUrl,
+    },
+  },
+
+  image: {
+    domains: [apiImageHostname()],
+  },
 
   modules: ['@nuxtjs/tailwindcss', '@nuxt/image'],
 
